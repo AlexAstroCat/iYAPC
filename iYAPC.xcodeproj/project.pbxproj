@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B2D459B12B4775600745347 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D458C12B4775600745347 /* PersonModel.m */; };
+		1B2D459C12B4775600745347 /* SessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D458E12B4775600745347 /* SessionModel.m */; };
+		1B2D459D12B4775600745347 /* AttendeeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D459012B4775600745347 /* AttendeeModel.m */; };
+		1B2D459E12B4775600745347 /* TrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D459212B4775600745347 /* TrackModel.m */; };
+		1B2D459F12B4775600745347 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D459412B4775600745347 /* EventModel.m */; };
+		1B2D45A012B4775600745347 /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D459612B4775600745347 /* LocationModel.m */; };
+		1B2D45A112B4775600745347 /* PresenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D459812B4775600745347 /* PresenterModel.m */; };
+		1B2D45A212B4775600745347 /* DayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D459A12B4775600745347 /* DayModel.m */; };
+		1B2D45BE12B4819900745347 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D45BC12B4819900745347 /* MainMenuViewController.m */; };
+		1B2D45BF12B4819900745347 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D45BD12B4819900745347 /* MainMenuViewController.xib */; };
+		1B2D45DE12B53D1100745347 /* iYAPCBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D45DC12B53D1100745347 /* iYAPCBackground.png */; };
+		1B2D45DF12B53D1100745347 /* iYAPCBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D45DD12B53D1100745347 /* iYAPCBackground@2x.png */; };
+		1B2D45E312B53E1B00745347 /* SessionTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D45E112B53E1B00745347 /* SessionTabViewController.m */; };
+		1B2D46C712B9755400745347 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D46C612B9755400745347 /* DataManager.m */; };
+		1D3623260D0F684500981E51 /* iYAPCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iYAPCAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28860BE40F44EE6400985440 /* CoreData.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		2899E5600DE3E45000AC0155 /* RootEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E55F0DE3E45000AC0155 /* RootEventViewController.xib */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		28C286E10D94DF7D0034E888 /* RootEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootEventViewController.m */; };
+		28D3F202112F7DC200FD0661 /* iYAPC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28D3F201112F7DC200FD0661 /* iYAPC.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B2D458B12B4775600745347 /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
+		1B2D458C12B4775600745347 /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
+		1B2D458D12B4775600745347 /* SessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionModel.h; sourceTree = "<group>"; };
+		1B2D458E12B4775600745347 /* SessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionModel.m; sourceTree = "<group>"; };
+		1B2D458F12B4775600745347 /* AttendeeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeModel.h; sourceTree = "<group>"; };
+		1B2D459012B4775600745347 /* AttendeeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeModel.m; sourceTree = "<group>"; };
+		1B2D459112B4775600745347 /* TrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackModel.h; sourceTree = "<group>"; };
+		1B2D459212B4775600745347 /* TrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackModel.m; sourceTree = "<group>"; };
+		1B2D459312B4775600745347 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
+		1B2D459412B4775600745347 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
+		1B2D459512B4775600745347 /* LocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationModel.h; sourceTree = "<group>"; };
+		1B2D459612B4775600745347 /* LocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationModel.m; sourceTree = "<group>"; };
+		1B2D459712B4775600745347 /* PresenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenterModel.h; sourceTree = "<group>"; };
+		1B2D459812B4775600745347 /* PresenterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterModel.m; sourceTree = "<group>"; };
+		1B2D459912B4775600745347 /* DayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayModel.h; sourceTree = "<group>"; };
+		1B2D459A12B4775600745347 /* DayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayModel.m; sourceTree = "<group>"; };
+		1B2D45BB12B4819900745347 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		1B2D45BC12B4819900745347 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		1B2D45BD12B4819900745347 /* MainMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainMenuViewController.xib; path = Classes/MainMenuViewController.xib; sourceTree = "<group>"; };
+		1B2D45DC12B53D1100745347 /* iYAPCBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iYAPCBackground.png; sourceTree = "<group>"; };
+		1B2D45DD12B53D1100745347 /* iYAPCBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iYAPCBackground@2x.png"; sourceTree = "<group>"; };
+		1B2D45E012B53E1B00745347 /* SessionTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionTabViewController.h; sourceTree = "<group>"; };
+		1B2D45E112B53E1B00745347 /* SessionTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionTabViewController.m; sourceTree = "<group>"; };
+		1B2D46C412B9750100745347 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SynthesizeSingleton.h; path = Classes/SynthesizeSingleton.h; sourceTree = "<group>"; };
+		1B2D46C512B9755400745347 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = NetworkInterface/DataManager.h; sourceTree = "<group>"; };
+		1B2D46C612B9755400745347 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = NetworkInterface/DataManager.m; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* iYAPCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iYAPCAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* iYAPCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iYAPCAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* iYAPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iYAPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28860B760F44E54D00985440 /* iYAPC.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = iYAPC.xcdatamodel; sourceTree = "<group>"; };
+		28860BE40F44EE6400985440 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E55F0DE3E45000AC0155 /* RootEventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootEventViewController.xib; sourceTree = "<group>"; };
+		28A0AAE50D9B0CCF005BE974 /* iYAPC_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iYAPC_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28C286DF0D94DF7D0034E888 /* RootEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootEventViewController.h; sourceTree = "<group>"; };
+		28C286E00D94DF7D0034E888 /* RootEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootEventViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* iYAPC-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iYAPC-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D46C312B974A100745347 /* Network Interface */,
+				28C286DF0D94DF7D0034E888 /* RootEventViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootEventViewController.m */,
+				1D3623240D0F684500981E51 /* iYAPCAppDelegate.h */,
+				1D3623250D0F684500981E51 /* iYAPCAppDelegate.m */,
+				1B2D45BB12B4819900745347 /* MainMenuViewController.h */,
+				1B2D45BC12B4819900745347 /* MainMenuViewController.m */,
+				1B2D45E012B53E1B00745347 /* SessionTabViewController.h */,
+				1B2D45E112B53E1B00745347 /* SessionTabViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* iYAPC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B2D45DB12B53D1100745347 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D45DC12B53D1100745347 /* iYAPCBackground.png */,
+				1B2D45DD12B53D1100745347 /* iYAPCBackground@2x.png */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
+		1B2D46C312B974A100745347 /* Network Interface */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D46C512B9755400745347 /* DataManager.h */,
+				1B2D46C612B9755400745347 /* DataManager.m */,
+			);
+			name = "Network Interface";
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D46C412B9750100745347 /* SynthesizeSingleton.h */,
+				28A0AAE50D9B0CCF005BE974 /* iYAPC_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D45DB12B53D1100745347 /* Images */,
+				28D3F201112F7DC200FD0661 /* iYAPC.xcdatamodeld */,
+				2899E55F0DE3E45000AC0155 /* RootEventViewController.xib */,
+				1B2D45BD12B4819900745347 /* MainMenuViewController.xib */,
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* iYAPC-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				28860BE40F44EE6400985440 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* iYAPC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iYAPC" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iYAPC;
+			productName = iYAPC;
+			productReference = 1D6058910D05DD3D006BFB54 /* iYAPC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iYAPC" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* iYAPC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				2899E5600DE3E45000AC0155 /* RootEventViewController.xib in Resources */,
+				1B2D45BF12B4819900745347 /* MainMenuViewController.xib in Resources */,
+				1B2D45DE12B53D1100745347 /* iYAPCBackground.png in Resources */,
+				1B2D45DF12B53D1100745347 /* iYAPCBackground@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* iYAPCAppDelegate.m in Sources */,
+				28C286E10D94DF7D0034E888 /* RootEventViewController.m in Sources */,
+				28D3F202112F7DC200FD0661 /* iYAPC.xcdatamodeld in Sources */,
+				1B2D459B12B4775600745347 /* PersonModel.m in Sources */,
+				1B2D459C12B4775600745347 /* SessionModel.m in Sources */,
+				1B2D459D12B4775600745347 /* AttendeeModel.m in Sources */,
+				1B2D459E12B4775600745347 /* TrackModel.m in Sources */,
+				1B2D459F12B4775600745347 /* EventModel.m in Sources */,
+				1B2D45A012B4775600745347 /* LocationModel.m in Sources */,
+				1B2D45A112B4775600745347 /* PresenterModel.m in Sources */,
+				1B2D45A212B4775600745347 /* DayModel.m in Sources */,
+				1B2D45BE12B4819900745347 /* MainMenuViewController.m in Sources */,
+				1B2D45E312B53E1B00745347 /* SessionTabViewController.m in Sources */,
+				1B2D46C712B9755400745347 /* DataManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iYAPC_Prefix.pch;
+				INFOPLIST_FILE = "iYAPC-Info.plist";
+				PRODUCT_NAME = iYAPC;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iYAPC_Prefix.pch;
+				INFOPLIST_FILE = "iYAPC-Info.plist";
+				PRODUCT_NAME = iYAPC;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iYAPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iYAPC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		28D3F201112F7DC200FD0661 /* iYAPC.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1B2D458B12B4775600745347 /* PersonModel.h */,
+				1B2D458C12B4775600745347 /* PersonModel.m */,
+				1B2D458D12B4775600745347 /* SessionModel.h */,
+				1B2D458E12B4775600745347 /* SessionModel.m */,
+				1B2D458F12B4775600745347 /* AttendeeModel.h */,
+				1B2D459012B4775600745347 /* AttendeeModel.m */,
+				1B2D459112B4775600745347 /* TrackModel.h */,
+				1B2D459212B4775600745347 /* TrackModel.m */,
+				1B2D459312B4775600745347 /* EventModel.h */,
+				1B2D459412B4775600745347 /* EventModel.m */,
+				1B2D459512B4775600745347 /* LocationModel.h */,
+				1B2D459612B4775600745347 /* LocationModel.m */,
+				1B2D459712B4775600745347 /* PresenterModel.h */,
+				1B2D459812B4775600745347 /* PresenterModel.m */,
+				1B2D459912B4775600745347 /* DayModel.h */,
+				1B2D459A12B4775600745347 /* DayModel.m */,
+				28860B760F44E54D00985440 /* iYAPC.xcdatamodel */,
+			);
+			currentVersion = 28860B760F44E54D00985440 /* iYAPC.xcdatamodel */;
+			path = iYAPC.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
