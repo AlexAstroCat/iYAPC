@@ -329,6 +329,7 @@
 	// Figure out which one is the newest, and update the current object with that
 	NSObject *oldRevision = [existingObject valueForKey:revisionPropertyName];
 	NSObject *newRevision = [newObject valueForKey:revisionPropertyName];
+
 #ifdef ManagedObjectXMLSyncDebug
 	NSLog(@"Comparing old revision %@ to new revision %@", oldRevision, newRevision);
 #endif
@@ -342,8 +343,8 @@
 	}
 	
 	// See if the new object isn't newer
-	NSComparisonResult compareResult = [(NSNumber*)[newRevision performSelector:compare withObject:oldRevision] integerValue];
-	if (compareResult != NSOrderedDescending)
+	NSComparisonResult compareResult = [oldRevision compare:newRevision];
+	if (compareResult != NSOrderedAscending)
 		return YES;
 	
 	// Merge the two objects together
