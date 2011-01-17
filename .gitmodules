@@ -1,0 +1,6 @@
+[submodule "Libraries/asi-http-request"]
+	path = Libraries/asi-http-request
+	url = https://github.com/pokeb/asi-http-request.git
+[submodule "Libraries/aqtoolkit"]
+	path = Libraries/aqtoolkit
+	url = https://github.com/AlanQuatermain/aqtoolkit.git

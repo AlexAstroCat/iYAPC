@@ -1,23 +1,23 @@
 // 
-//  TrackModel.m
+//  VenueModel.m
 //  iYAPC
 //
 //  Created by Michael Nachbaur on 11-01-17.
 //  Copyright 2011 Decaf Ninja Software. All rights reserved.
 //
 
-#import "TrackModel.h"
+#import "VenueModel.h"
 
 #import "EventModel.h"
-#import "SessionModel.h"
 
-@implementation TrackModel 
+@implementation VenueModel 
 
-@dynamic revision;
+@dynamic address;
+@dynamic city;
+@dynamic country;
 @dynamic title;
-@dynamic order;
 @dynamic caption;
-@dynamic event;
-@dynamic sessions;
+@dynamic province;
+@dynamic events;
 
 @end

@@ -1,0 +1,1 @@
+#define kYAPCS3Bucket @"iyapc.decafninja.com"

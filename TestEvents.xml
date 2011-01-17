@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Data>
+    <Venue>
+		<revision>1</revision>
+		<title>Crowne Plaza Asheville</title>
+		<caption>• 34000 square feet of meeting and banquet facilities
+• 274 well-appointed guest rooms, including 4 suites and 17 King Executive suites
+• Complimentary parking
+• Complimentary high-speed wireless internet
+• Award-winning restaurant
+• Mulligan’s Bar &amp; Grille, featuring sandwiches, snacks and drink specials
+• On-site golf, indoor and outdoor tennis, and swimming
+• Tennis and Golf Pro Shop
+• Fitness center with brand new state of the art equipment
+• Concierge and bell services
+• Pet Friendly rooms are available</caption>
+		<latitude>36.6082</latitude>
+		<longitude>-82.5526</longitude>
+	</Venue>
+	<Event>
+		<revision>1</revision>
+		<title>YAPC::NA 2011</title>
+		<subtitle>YAPC North America 2011</subtitle>
+		<locationTitle>Asheville, NC, USA</locationTitle>
+		<description>Annual North American YAPC Perl conference</description>
+		<latitude>36.6082</latitude>
+		<longitude>-82.5526</longitude>
+		<venue title="Crowne Plaza Asheville"/>
+	</Event>
+	<Day>
+		<revision>1</revision>
+		<eventDate>2011-06-13</eventDate>
+		<event title="YAPC::NA 2011"/>
+	</Day>
+	<Day>
+		<revision>1</revision>
+		<eventDate>2011-06-14</eventDate>
+		<event title="YAPC::NA 2011"/>
+	</Day>
+	<Day>
+		<revision>1</revision>
+		<eventDate>2011-06-15</eventDate>
+		<event title="YAPC::NA 2011"/>
+	</Day>
+	<Track>
+		<revision>1</revision>
+		<title>cPanel.net (GH3)</title>
+		<caption>This is the description for this track</caption>
+		<order>1</order>
+		<event title="YAPC::NA 2011"/>
+	</Track>
+	<Track>
+		<revision>1</revision>
+		<title>Grant Street Group (Senate)</title>
+		<caption>This is the description for the other track</caption>
+		<order>2</order>
+		<event title="YAPC::NA 2011"/>
+	</Track>
+	<Track>
+		<revision>1</revision>
+		<title>cPanel.net (GH1)</title>
+		<caption>The other description</caption>
+		<order>3</order>
+		<event title="YAPC::NA 2011"/>
+	</Track>
+	<Track>
+		<revision>1</revision>
+		<title>Nationwide (Cartoon 1)</title>
+		<caption>The funnily-named description</caption>
+		<order>4</order>
+		<event title="YAPC::NA 2011"/>
+	</Track>
+	<Track>
+		<revision>1</revision>
+		<title>Nationwide (Cartoon 2)</title>
+		<caption>Another oddly-named caption</caption>
+		<order>5</order>
+		<event title="YAPC::NA 2011"/>
+	</Track>
+</Data>

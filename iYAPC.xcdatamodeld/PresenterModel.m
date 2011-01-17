@@ -2,8 +2,8 @@
 //  PresenterModel.m
 //  iYAPC
 //
-//  Created by Michael Nachbaur on 10-12-11.
-//  Copyright 2010 Decaf Ninja Software. All rights reserved.
+//  Created by Michael Nachbaur on 11-01-17.
+//  Copyright 2011 Decaf Ninja Software. All rights reserved.
 //
 
 #import "PresenterModel.h"
@@ -13,8 +13,8 @@
 @implementation PresenterModel 
 
 @dynamic order;
-@dynamic description;
+@dynamic caption;
 @dynamic role;
-@dynamic sessions;
+@dynamic presentingSessions;
 
 @end

@@ -13,4 +13,6 @@
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
     #import <CoreData/CoreData.h>
+
+	#import "iYAPC_Constants.h"
 #endif

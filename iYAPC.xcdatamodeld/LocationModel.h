@@ -2,8 +2,8 @@
 //  LocationModel.h
 //  iYAPC
 //
-//  Created by Michael Nachbaur on 10-12-11.
-//  Copyright 2010 Decaf Ninja Software. All rights reserved.
+//  Created by Michael Nachbaur on 11-01-17.
+//  Copyright 2011 Decaf Ninja Software. All rights reserved.
 //
 
 #import <CoreData/CoreData.h>
@@ -13,6 +13,7 @@
 {
 }
 
+@property (nonatomic, retain) NSNumber * revision;
 @property (nonatomic, retain) NSNumber * longitude;
 @property (nonatomic, retain) NSNumber * latitude;
 

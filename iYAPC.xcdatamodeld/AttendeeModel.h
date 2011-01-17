@@ -2,8 +2,8 @@
 //  AttendeeModel.h
 //  iYAPC
 //
-//  Created by Michael Nachbaur on 10-12-11.
-//  Copyright 2010 Decaf Ninja Software. All rights reserved.
+//  Created by Michael Nachbaur on 11-01-17.
+//  Copyright 2011 Decaf Ninja Software. All rights reserved.
 //
 
 #import <CoreData/CoreData.h>
@@ -15,16 +15,16 @@
 {
 }
 
-@property (nonatomic, retain) NSSet* sessions;
+@property (nonatomic, retain) NSSet* attendingSessions;
 
 @end
 
 
 @interface AttendeeModel (CoreDataGeneratedAccessors)
-- (void)addSessionsObject:(SessionModel *)value;
-- (void)removeSessionsObject:(SessionModel *)value;
-- (void)addSessions:(NSSet *)value;
-- (void)removeSessions:(NSSet *)value;
+- (void)addAttendingSessionsObject:(SessionModel *)value;
+- (void)removeAttendingSessionsObject:(SessionModel *)value;
+- (void)addAttendingSessions:(NSSet *)value;
+- (void)removeAttendingSessions:(NSSet *)value;
 
 @end
 

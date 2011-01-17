@@ -8,7 +8,11 @@
 
 #import "iYAPCAppDelegate.h"
 #import "RootEventViewController.h"
+#import "ASIS3Request.h"
+#import "PublicDataManager.h"
 
+#define kAWS_S3_ACCESS_KEY @"asdf"
+#define kAWS_S3_SECRET_KEY @"asdf"
 
 @implementation iYAPCAppDelegate
 
@@ -28,6 +32,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
+	[ASIS3Request setSharedSecretAccessKey:kAWS_S3_SECRET_KEY];
+	[ASIS3Request setSharedAccessKey:kAWS_S3_ACCESS_KEY];
 
     // Add the navigation controller's view to the window and display.
     [self.window addSubview:navigationController.view];
@@ -65,6 +71,7 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+	[[PublicDataManager sharedPublicDataManager] reloadData];
 }
 
 
@@ -103,16 +110,16 @@
  */
 - (NSManagedObjectContext *)managedObjectContext {
     
-    if (managedObjectContext_ != nil) {
-        return managedObjectContext_;
+    if (_managedObjectContext != nil) {
+        return _managedObjectContext;
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        managedObjectContext_ = [[NSManagedObjectContext alloc] init];
-        [managedObjectContext_ setPersistentStoreCoordinator:coordinator];
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
-    return managedObjectContext_;
+    return _managedObjectContext;
 }
 
 
@@ -122,13 +129,13 @@
  */
 - (NSManagedObjectModel *)managedObjectModel {
     
-    if (managedObjectModel_ != nil) {
-        return managedObjectModel_;
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
     }
     NSString *modelPath = [[NSBundle mainBundle] pathForResource:@"iYAPC" ofType:@"momd"];
     NSURL *modelURL = [NSURL fileURLWithPath:modelPath];
-    managedObjectModel_ = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
-    return managedObjectModel_;
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
+    return _managedObjectModel;
 }
 
 
@@ -138,15 +145,15 @@
  */
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     
-    if (persistentStoreCoordinator_ != nil) {
-        return persistentStoreCoordinator_;
+    if (_persistentStoreCoordinator != nil) {
+        return _persistentStoreCoordinator;
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"iYAPC.sqlite"];
     
     NSError *error = nil;
-    persistentStoreCoordinator_ = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![persistentStoreCoordinator_ addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -174,7 +181,7 @@
         abort();
     }    
     
-    return persistentStoreCoordinator_;
+    return _persistentStoreCoordinator;
 }
 
 
@@ -201,9 +208,9 @@
 
 - (void)dealloc {
     
-    [managedObjectContext_ release];
-    [managedObjectModel_ release];
-    [persistentStoreCoordinator_ release];
+    [_managedObjectContext release];
+    [_managedObjectModel release];
+    [_persistentStoreCoordinator release];
     
     [navigationController release];
     [window release];

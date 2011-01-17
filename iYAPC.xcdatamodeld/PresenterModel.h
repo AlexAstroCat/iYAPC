@@ -2,32 +2,32 @@
 //  PresenterModel.h
 //  iYAPC
 //
-//  Created by Michael Nachbaur on 10-12-11.
-//  Copyright 2010 Decaf Ninja Software. All rights reserved.
+//  Created by Michael Nachbaur on 11-01-17.
+//  Copyright 2011 Decaf Ninja Software. All rights reserved.
 //
 
 #import <CoreData/CoreData.h>
-#import "PersonModel.h"
+#import "AttendeeModel.h"
 
 @class SessionModel;
 
-@interface PresenterModel :  PersonModel  
+@interface PresenterModel :  AttendeeModel  
 {
 }
 
 @property (nonatomic, retain) NSNumber * order;
-@property (nonatomic, retain) NSString * description;
+@property (nonatomic, retain) NSString * caption;
 @property (nonatomic, retain) NSString * role;
-@property (nonatomic, retain) NSSet* sessions;
+@property (nonatomic, retain) NSSet* presentingSessions;
 
 @end
 
 
 @interface PresenterModel (CoreDataGeneratedAccessors)
-- (void)addSessionsObject:(SessionModel *)value;
-- (void)removeSessionsObject:(SessionModel *)value;
-- (void)addSessions:(NSSet *)value;
-- (void)removeSessions:(NSSet *)value;
+- (void)addPresentingSessionsObject:(SessionModel *)value;
+- (void)removePresentingSessionsObject:(SessionModel *)value;
+- (void)addPresentingSessions:(NSSet *)value;
+- (void)removePresentingSessions:(NSSet *)value;
 
 @end
 

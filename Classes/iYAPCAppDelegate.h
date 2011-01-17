@@ -15,9 +15,9 @@
     UINavigationController *navigationController;
 
 @private
-    NSManagedObjectContext *managedObjectContext_;
-    NSManagedObjectModel *managedObjectModel_;
-    NSPersistentStoreCoordinator *persistentStoreCoordinator_;
+    NSManagedObjectContext *_managedObjectContext;
+    NSManagedObjectModel *_managedObjectModel;
+    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

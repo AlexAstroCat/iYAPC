@@ -8,7 +8,6 @@
 *.pbxuser
 *.perspectivev3
 *blib
-.*
 .*.sw*
 .DS_Store
 MANIFEST
