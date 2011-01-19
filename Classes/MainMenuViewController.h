@@ -7,12 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EventModel.h"
 
 @interface MainMenuViewController : UIViewController {
+	EventModel *_eventObject;
+	UIImageView *_headerImageView;
 
+@private
+    NSManagedObjectContext *_managedObjectContext;
 }
 
-- (IBAction)showDaysAndSessions:(id)sender;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) EventModel *eventObject;
+@property (nonatomic, retain) IBOutlet UIImageView *headerImageView;
+
+- (IBAction)loginButtonTapped:(id)sender;
+- (IBAction)peopleButtonTapped:(id)sender;
+- (IBAction)myProfileButtonTapped:(id)sender;
+- (IBAction)myScheduleButtonTapped:(id)sender;
+- (IBAction)tracksButtonTapped:(id)sender;
+- (IBAction)sessionsButtonTapped:(id)sender;
+- (IBAction)venueButtonTapped:(id)sender;
+- (IBAction)sponsorsButtonTapped:(id)sender;
+- (IBAction)infoButtonTapped:(id)sender;
 
 @end

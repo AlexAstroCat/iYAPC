@@ -77,4 +77,14 @@
 		<order>5</order>
 		<event title="YAPC::NA 2011"/>
 	</Track>
+	<Session>
+		<revision>3</revision>
+		<title>Intro to Moose</title>
+		<caption>Moose is a postmodern object system for Perl 5 that takes the tedium out of writing object-oriented Perl. It is a key technology in the Modern Perl toolbox and is used in an ever growing number of CPAN modules and by an ever growing list of companies. 
+
+This talk will introduce you to the central concepts and features of Moose as well as show you where Moose can fit into your personal toolbox.</caption>
+		<startTime>2011-06-13T09:00:00</startTime>
+		<endTime>2011-06-13T09:40:00</endTime>
+		<eventDay eventDate="2011-06-13" event.title="YAPC::NA 2011"/>
+	</Session>
 </Data>

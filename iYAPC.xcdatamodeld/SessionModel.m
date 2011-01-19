@@ -27,4 +27,14 @@
 @dynamic track;
 @dynamic attendees;
 
+- (NSString*)startTimeSection {
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+	[dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+	[dateFormatter setDateStyle:NSDateFormatterNoStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+	
+	NSString *dateStr = [dateFormatter stringFromDate:self.startTime];
+	return dateStr;
+}
+
 @end

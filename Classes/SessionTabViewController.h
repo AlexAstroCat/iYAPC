@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventModel.h"
 
+@interface SessionTabViewController : UITabBarController<UITabBarControllerDelegate, NSFetchedResultsControllerDelegate> {
+	EventModel *_eventObject;
 
-@interface SessionTabViewController : UITabBarController {
-
+@private
+    NSFetchedResultsController *_fetchedResultsController;
+    NSManagedObjectContext *_managedObjectContext;
 }
+
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) EventModel *eventObject;
 
 @end

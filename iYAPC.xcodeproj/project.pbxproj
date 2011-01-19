@@ -45,6 +45,11 @@
 		1BD9881612E4A3D5001C2BB0 /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880B12E4A3D5001C2BB0 /* LocationModel.m */; };
 		1BD9881712E4A3D5001C2BB0 /* PresenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880D12E4A3D5001C2BB0 /* PresenterModel.m */; };
 		1BD9881812E4A3D5001C2BB0 /* DayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880F12E4A3D5001C2BB0 /* DayModel.m */; };
+		1BD988E912E4EA20001C2BB0 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD988E812E4EA20001C2BB0 /* clock.png */; };
+		1BD988FB12E694E8001C2BB0 /* SessionDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */; };
+		1BD9897A12E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9897912E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m */; };
+		1BD9897C12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD9897B12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib */; };
+		1BD98A4B12E6C40B001C2BB0 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */; };
 		1D3623260D0F684500981E51 /* iYAPCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iYAPCAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -132,6 +137,14 @@
 		1BD9880D12E4A3D5001C2BB0 /* PresenterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterModel.m; sourceTree = "<group>"; };
 		1BD9880E12E4A3D5001C2BB0 /* DayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayModel.h; sourceTree = "<group>"; };
 		1BD9880F12E4A3D5001C2BB0 /* DayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayModel.m; sourceTree = "<group>"; };
+		1BD988E812E4EA20001C2BB0 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		1BD988F912E694E8001C2BB0 /* SessionDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDayViewController.h; sourceTree = "<group>"; };
+		1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDayViewController.m; sourceTree = "<group>"; };
+		1BD9897812E6ACFF001C2BB0 /* SessionSummaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionSummaryTableViewCell.h; sourceTree = "<group>"; };
+		1BD9897912E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionSummaryTableViewCell.m; sourceTree = "<group>"; };
+		1BD9897B12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionSummaryTableViewCell.xib; sourceTree = "<group>"; };
+		1BD98A4912E6C40B001C2BB0 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
+		1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* iYAPCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iYAPCAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* iYAPCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iYAPCAppDelegate.m; sourceTree = "<group>"; };
@@ -172,16 +185,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1BD9897412E6ABC9001C2BB0 /* Table Cells */,
+				1BD988F812E6948E001C2BB0 /* View Controllers */,
 				1B2D481B12B9CF4200745347 /* Utilities */,
 				1B2D46C312B974A100745347 /* Network Interface */,
-				28C286DF0D94DF7D0034E888 /* RootEventViewController.h */,
-				28C286E00D94DF7D0034E888 /* RootEventViewController.m */,
 				1D3623240D0F684500981E51 /* iYAPCAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iYAPCAppDelegate.m */,
-				1B2D45BB12B4819900745347 /* MainMenuViewController.h */,
-				1B2D45BC12B4819900745347 /* MainMenuViewController.m */,
-				1B2D45E012B53E1B00745347 /* SessionTabViewController.h */,
-				1B2D45E112B53E1B00745347 /* SessionTabViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -197,6 +206,7 @@
 		1B2D45DB12B53D1100745347 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1BD988E812E4EA20001C2BB0 /* clock.png */,
 				1B2D45DC12B53D1100745347 /* iYAPCBackground.png */,
 				1B2D45DD12B53D1100745347 /* iYAPCBackground@2x.png */,
 			);
@@ -307,6 +317,32 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
+		1BD988F812E6948E001C2BB0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				28C286DF0D94DF7D0034E888 /* RootEventViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootEventViewController.m */,
+				1B2D45BB12B4819900745347 /* MainMenuViewController.h */,
+				1B2D45BC12B4819900745347 /* MainMenuViewController.m */,
+				1B2D45E012B53E1B00745347 /* SessionTabViewController.h */,
+				1B2D45E112B53E1B00745347 /* SessionTabViewController.m */,
+				1BD988F912E694E8001C2BB0 /* SessionDayViewController.h */,
+				1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */,
+				1BD98A4912E6C40B001C2BB0 /* SessionDetailViewController.h */,
+				1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		1BD9897412E6ABC9001C2BB0 /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1BD9897812E6ACFF001C2BB0 /* SessionSummaryTableViewCell.h */,
+				1BD9897912E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m */,
+			);
+			name = "Table Cells";
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +352,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				1BD9897B12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -417,6 +454,8 @@
 				1B2D45DE12B53D1100745347 /* iYAPCBackground.png in Resources */,
 				1B2D45DF12B53D1100745347 /* iYAPCBackground@2x.png in Resources */,
 				1B2D483712BA703100745347 /* TestEvents.xml in Resources */,
+				1BD988E912E4EA20001C2BB0 /* clock.png in Resources */,
+				1BD9897C12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +499,9 @@
 				1BD9881612E4A3D5001C2BB0 /* LocationModel.m in Sources */,
 				1BD9881712E4A3D5001C2BB0 /* PresenterModel.m in Sources */,
 				1BD9881812E4A3D5001C2BB0 /* DayModel.m in Sources */,
+				1BD988FB12E694E8001C2BB0 /* SessionDayViewController.m in Sources */,
+				1BD9897A12E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m in Sources */,
+				1BD98A4B12E6C40B001C2BB0 /* SessionDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

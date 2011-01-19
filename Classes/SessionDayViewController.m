@@ -1,23 +1,40 @@
 //
-//  RootEventViewController.m
+//  SessionDayViewController.m
 //  iYAPC
 //
-//  Created by Michael Nachbaur on 10-12-08.
-//  Copyright 2010 Decaf Ninja Software. All rights reserved.
+//  Created by Michael Nachbaur on 11-01-18.
+//  Copyright 2011 Decaf Ninja Software. All rights reserved.
 //
 
-#import "RootEventViewController.h"
-#import "MainMenuViewController.h"
-#import "EventModel.h"
+#import "SessionDayViewController.h"
+#import "SessionModel.h"
 
-@interface RootEventViewController ()
+@interface SessionDayViewController (Private)
+
+- (void)updateTabInfo;
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+
 @end
 
-
-@implementation RootEventViewController
+@implementation SessionDayViewController
 @synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize dayObject = _dayObject;
+
+#pragma mark -
+#pragma mark Initialization
+
+- (id)initWithStyle:(UITableViewStyle)style {
+    // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+    self = [super initWithStyle:style];
+    if (self) {
+		[self addObserver:self
+			   forKeyPath:@"dayObject"
+				  options:NSKeyValueObservingOptionNew
+				  context:nil];
+    }
+    return self;
+}
 
 
 #pragma mark -
@@ -26,25 +43,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	self.navigationItem.title = @"iYAPC";
-	
-	/*
-    // Set up the edit and add buttons.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    [addButton release];
-	 */
 }
 
-
-// Implement viewWillAppear: to do additional setup before the view is presented.
+/*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
-
-
+*/
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -60,61 +65,79 @@
     [super viewDidDisappear:animated];
 }
 */
-
 /*
- // Override to allow orientations other than the default portrait orientation.
+// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations.
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
- */
+*/
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+	if ([keyPath isEqualToString:@"dayObject"]) {
+		[self updateTabInfo];
+	} else {
+		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+	}
+}
+
+#pragma mark -
+#pragma mark Memory management
+
+- (void)didReceiveMemoryWarning {
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Relinquish ownership any cached data, images, etc. that aren't in use.
+}
+
+- (void)viewDidUnload {
+    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
+    // For example: self.myOutlet = nil;
+}
 
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    EventModel *event = (EventModel*)[self.fetchedResultsController objectAtIndexPath:indexPath];
-	if (![event isMemberOfClass:[EventModel class]])
-		return;
+- (void)dealloc {
+	self.dayObject = nil;
+	[self removeObserver:self forKeyPath:@"dayObject"];
 	
-    cell.textLabel.text = event.title;
-	cell.detailTextLabel.text = event.subtitle;
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [super dealloc];
 }
 
 
 #pragma mark -
-#pragma mark Add a new object
+#pragma mark Private methods
 
-- (void)insertNewObject {
-    
-    // Create a new instance of the entity managed by the fetched results controller.
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+- (void)updateTabInfo {
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+	
+	[dateFormatter setDateFormat:@"LLL d"];
+	NSString *fullDay = [dateFormatter stringFromDate:self.dayObject.eventDate];
+	
+	[dateFormatter setDateFormat:@"ccc"];
+	NSString *shortDay = [[dateFormatter stringFromDate:self.dayObject.eventDate] uppercaseString];
+	
+	self.navigationItem.title = fullDay;
+	self.tabBarItem.title = fullDay;
 }
 
 
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-
-    // Prevent new objects being added when in editing mode.
-    [super setEditing:(BOOL)editing animated:(BOOL)animated];
-    self.navigationItem.rightBarButtonItem.enabled = !editing;
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    SessionModel *session = (SessionModel*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+	if (![session isMemberOfClass:[SessionModel class]])
+		return;
+	
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+	[dateFormatter setDateStyle:NSDateFormatterNoStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+	
+	NSString *startTimeStr = [dateFormatter stringFromDate:session.startTime];
+	NSString *endTimeStr = [dateFormatter stringFromDate:session.endTime];
+	
+    cell.textLabel.text = session.title;
+	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", startTimeStr, endTimeStr];
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
-
 
 #pragma mark -
 #pragma mark Table view data source
@@ -123,6 +146,11 @@
     return [[self.fetchedResultsController sections] count];
 }
 
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *name = nil;
+	name = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
+	return name;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
@@ -132,12 +160,12 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"EventCell";
+    
+    static NSString *CellIdentifier = @"SessionCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-									   reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     [self configureCell:cell atIndexPath:indexPath];
@@ -148,15 +176,13 @@
 
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
-
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -178,26 +204,24 @@
     }   
 }
 
-
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // The table view should not be re-orderable.
     return NO;
 }
 
-
 #pragma mark -
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	EventModel *selectedObject = (EventModel*)[self.fetchedResultsController objectAtIndexPath:indexPath];
-	
-	MainMenuViewController *controller = [[[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil] autorelease];
-	controller.managedObjectContext = self.managedObjectContext;
-	controller.eventObject = selectedObject;
-	
-	[self.navigationController pushViewController:controller animated:YES];
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+    */
 }
-
 
 #pragma mark -
 #pragma mark Fetched results controller
@@ -208,20 +232,29 @@
     }
     
     NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+
+	NSArray *sortDescriptors = [NSArray arrayWithObjects:
+								[NSSortDescriptor sortDescriptorWithKey:@"startTime" ascending:YES],
+								[NSSortDescriptor sortDescriptorWithKey:@"endTime" ascending:YES],
+								[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES],
+								nil];
+	NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"eventDay = %@", self.dayObject];
+	
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Session"
+											  inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     [fetchRequest setFetchBatchSize:20];
-    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:
-									  [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES],
-									  nil]];
-    
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-																								managedObjectContext:self.managedObjectContext
-																								  sectionNameKeyPath:nil
-																										   cacheName:@"RootEvent"];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;    
-    [aFetchedResultsController release];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+	[fetchRequest setPredicate:searchPredicate];
+
+    NSString *cacheName = [[self.dayObject objectID] description];
+    NSFetchedResultsController *fetchedResults = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+																					 managedObjectContext:self.managedObjectContext
+																					   sectionNameKeyPath:@"startTimeSection"
+																								cacheName:cacheName];
+    fetchedResults.delegate = self;
+    self.fetchedResultsController = fetchedResults;    
+    [fetchedResults release];
     
     NSError *error = nil;
     if (![_fetchedResultsController performFetch:&error]) {
@@ -296,37 +329,13 @@
 
 
 /*
-// Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
+ // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
  
  - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    // In the simplest, most efficient, case, reload the table view.
-    [self.tableView reloadData];
-}
+ // In the simplest, most efficient, case, reload the table view.
+ [self.tableView reloadData];
+ }
  */
-
-
-#pragma mark -
-#pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
-
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
-
-- (void)dealloc {
-    [_fetchedResultsController release];
-    [_managedObjectContext release];
-    [super dealloc];
-}
 
 
 @end

@@ -177,9 +177,7 @@
 	NSMutableArray *predicates = [NSMutableArray arrayWithCapacity:[attributeDict count]];
 
 	// Iterate over attributes to build a list of search predicates
-	NSEnumerator *enumerator = [attributeDict keyEnumerator];
-	NSString *key;
-	while ((key = [enumerator nextObject])) {
+	for (NSString *key in [attributeDict allKeys]) {
 		NSString *value = [attributeDict objectForKey:key];
 		NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"%K = %@", key, value, nil];
 		[predicates addObject:searchPredicate];
@@ -225,7 +223,7 @@
 		else if (attrType == NSDateAttributeType) {
 			NSString *dateFormat = [[property userInfo] objectForKey:@"dateFormat"];
 			if (!dateFormat || [dateFormat length] < 1)
-				dateFormat = @"yyyy-MM-DDThh:mm:ssZ";
+				dateFormat = @"yyyy-MM-dd'T'hh:mm:ss";
 			
 			NSString *localeStr = [[property userInfo] objectForKey:@"locale"];
 			if (!localeStr || [localeStr length] < 1)

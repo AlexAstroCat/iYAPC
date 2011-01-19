@@ -7,9 +7,13 @@
 //
 
 #import "MainMenuViewController.h"
-
+#import "SessionTabViewController.h"
+#import "SessionDayViewController.h"
 
 @implementation MainMenuViewController
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize eventObject = _eventObject;
+@synthesize headerImageView = _headerImageView;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -22,12 +26,10 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.navigationItem.title = self.eventObject.title;
 }
-*/
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -54,7 +56,51 @@
 #pragma mark -
 #pragma mark Actions
 
-- (IBAction)showDaysAndSessions:(id)sender {
+- (IBAction)loginButtonTapped:(id)sender {
 }
+
+- (IBAction)peopleButtonTapped:(id)sender {
+}
+
+- (IBAction)myProfileButtonTapped:(id)sender {
+}
+
+- (IBAction)myScheduleButtonTapped:(id)sender {
+}
+
+- (IBAction)tracksButtonTapped:(id)sender {
+}
+
+- (IBAction)sessionsButtonTapped:(id)sender {
+	UIViewController *viewcontroller;
+	
+	// If we have more than one day, show the tab view controller
+	if ([self.eventObject.days count] > 1) {
+		SessionTabViewController *controller = [[[SessionTabViewController alloc] initWithNibName:nil bundle:nil] autorelease];
+		controller.managedObjectContext = self.managedObjectContext;
+		controller.eventObject = self.eventObject;
+		viewcontroller = controller;
+	}
+	
+	// If we only have one day to this event, simply show that day's event
+	else {
+		SessionDayViewController *controller = [[[SessionDayViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+		controller.managedObjectContext = self.managedObjectContext;
+		controller.dayObject = [self.eventObject.days anyObject];
+		viewcontroller = controller;
+	}
+	
+	[self.navigationController pushViewController:viewcontroller animated:YES];
+}
+
+- (IBAction)venueButtonTapped:(id)sender {
+}
+
+- (IBAction)sponsorsButtonTapped:(id)sender {
+}
+
+- (IBAction)infoButtonTapped:(id)sender {
+}
+
 
 @end
