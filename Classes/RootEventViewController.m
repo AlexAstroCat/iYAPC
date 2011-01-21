@@ -12,6 +12,7 @@
 
 @interface RootEventViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)navigateToItem:(EventModel*)event animated:(BOOL)isAnimated;
 @end
 
 
@@ -27,6 +28,12 @@
     [super viewDidLoad];
 
 	self.navigationItem.title = @"iYAPC";
+	
+	// If only one conference is available, just show them that one conference
+	if ([[self.fetchedResultsController fetchedObjects] count] == 1) {
+		EventModel *theEvent = [[self.fetchedResultsController fetchedObjects] lastObject];
+		[self navigateToItem:theEvent animated:NO];
+	}
 	
 	/*
     // Set up the edit and add buttons.
@@ -70,6 +77,10 @@
  */
 
 
+
+#pragma mark -
+#pragma mark Private Methods
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     EventModel *event = (EventModel*)[self.fetchedResultsController objectAtIndexPath:indexPath];
 	if (![event isMemberOfClass:[EventModel class]])
@@ -81,43 +92,24 @@
 }
 
 
-#pragma mark -
-#pragma mark Add a new object
+- (void)navigateToItem:(EventModel*)event animated:(BOOL)isAnimated {
+	MainMenuViewController *controller = [[[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil] autorelease];
+	controller.managedObjectContext = self.managedObjectContext;
+	controller.eventObject = event;
 
-- (void)insertNewObject {
-    
-    // Create a new instance of the entity managed by the fetched results controller.
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-    
-    // If appropriate, configure the new managed object.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    
-    // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+	[self.navigationController pushViewController:controller animated:isAnimated];
 }
 
+#pragma mark -
+#pragma mark Table view data source
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-
+	
     // Prevent new objects being added when in editing mode.
     [super setEditing:(BOOL)editing animated:(BOOL)animated];
     self.navigationItem.rightBarButtonItem.enabled = !editing;
 }
 
-
-#pragma mark -
-#pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [[self.fetchedResultsController sections] count];
@@ -191,11 +183,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	EventModel *selectedObject = (EventModel*)[self.fetchedResultsController objectAtIndexPath:indexPath];
 	
-	MainMenuViewController *controller = [[[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil] autorelease];
-	controller.managedObjectContext = self.managedObjectContext;
-	controller.eventObject = selectedObject;
-	
-	[self.navigationController pushViewController:controller animated:YES];
+	[self navigateToItem:selectedObject animated:YES];
 }
 
 

@@ -21,7 +21,6 @@
 @property (nonatomic, retain) EventModel *eventObject;
 @property (nonatomic, retain) IBOutlet UIImageView *headerImageView;
 
-- (IBAction)loginButtonTapped:(id)sender;
 - (IBAction)peopleButtonTapped:(id)sender;
 - (IBAction)myProfileButtonTapped:(id)sender;
 - (IBAction)myScheduleButtonTapped:(id)sender;

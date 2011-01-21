@@ -19,12 +19,14 @@
 @property (nonatomic, retain) NSNumber * revision;
 @property (nonatomic, retain) NSString * subtitle;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSString * headerImageUrl;
 @property (nonatomic, retain) NSString * locationTitle;
 @property (nonatomic, retain) NSString * caption;
 @property (nonatomic, retain) NSSet* tracks;
 @property (nonatomic, retain) VenueModel * venue;
 @property (nonatomic, retain) NSSet* days;
+
+@property (nonatomic, retain) NSString * headerImageUrl;
+@property (nonatomic, retain) UIImage * headerImage;
 
 @end
 

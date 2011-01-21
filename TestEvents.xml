@@ -25,6 +25,7 @@
 		<description>Annual North American YAPC Perl conference</description>
 		<latitude>36.6082</latitude>
 		<longitude>-82.5526</longitude>
+		<headerImageUrl>http://nachbaur.com/tmp/YAPCNA2011.png</headerImageUrl>
 		<venue title="Crowne Plaza Asheville"/>
 	</Event>
 	<Day>

@@ -36,6 +36,7 @@ typedef enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.navigationItem.title = self.eventObject.title;
+	[self.headerImageView setImage:self.eventObject.headerImage];
 	
 	for (UIView *subview in self.view.subviews) {
 		switch (subview.tag) {
@@ -75,9 +76,6 @@ typedef enum {
 
 #pragma mark -
 #pragma mark Actions
-
-- (IBAction)loginButtonTapped:(id)sender {
-}
 
 - (IBAction)peopleButtonTapped:(id)sender {
 }
