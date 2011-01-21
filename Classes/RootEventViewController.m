@@ -317,14 +317,13 @@
 
 
 - (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+	[super viewDidUnload];
+	self.fetchedResultsController = nil;
 }
 
 
 - (void)dealloc {
-    [_fetchedResultsController release];
-    [_managedObjectContext release];
+	self.managedObjectContext = nil;
     [super dealloc];
 }
 

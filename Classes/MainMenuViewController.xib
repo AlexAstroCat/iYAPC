@@ -166,6 +166,7 @@
 							<bytes key="NSRGB">MCAwIDAgMC41AA</bytes>
 						</object>
 						<bool key="IBUIOpaque">NO</bool>
+						<int key="IBUITag">1</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<object class="IBUIView" id="131772820">
@@ -257,6 +258,7 @@
 							<bytes key="NSRGB">MCAwIDAgMC41AA</bytes>
 						</object>
 						<bool key="IBUIOpaque">NO</bool>
+						<int key="IBUITag">1</int>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<object class="IBUIButton" id="421162109">

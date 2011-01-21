@@ -7,8 +7,15 @@
 //
 
 #import "MainMenuViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
 #import "SessionTabViewController.h"
 #import "SessionDayViewController.h"
+
+typedef enum {
+	MainMenuViewControllerViewTagNone,
+	MainMenuViewControllerViewTagRoundedBox
+} MainMenuViewControllerViewTag;
 
 @implementation MainMenuViewController
 @synthesize managedObjectContext = _managedObjectContext;
@@ -29,6 +36,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.navigationItem.title = self.eventObject.title;
+	
+	for (UIView *subview in self.view.subviews) {
+		switch (subview.tag) {
+			case MainMenuViewControllerViewTagRoundedBox:
+				subview.layer.cornerRadius = 10.0;
+				subview.layer.borderColor = [UIColor colorWithWhite:1.0 alpha:0.5].CGColor;
+				subview.layer.borderWidth = 1.0;
+				break;
+			default:
+				break;
+		}
+	}
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -50,6 +69,7 @@
 
 
 - (void)dealloc {
+	self.managedObjectContext = nil;
     [super dealloc];
 }
 

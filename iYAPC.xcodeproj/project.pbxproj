@@ -36,20 +36,20 @@
 		1B6E186D12C0730D00C44A42 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E186C12C0730D00C44A42 /* UserManager.m */; };
 		1B6E195512C3F75C00C44A42 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6E188612C3D44B00C44A42 /* libxml2.2.dylib */; };
 		1BD985CB12E3A0EA001C2BB0 /* PublicDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */; };
-		1BD9881012E4A3D5001C2BB0 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD987FF12E4A3D5001C2BB0 /* PersonModel.m */; };
-		1BD9881112E4A3D5001C2BB0 /* SessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880112E4A3D5001C2BB0 /* SessionModel.m */; };
-		1BD9881212E4A3D5001C2BB0 /* AttendeeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880312E4A3D5001C2BB0 /* AttendeeModel.m */; };
-		1BD9881312E4A3D5001C2BB0 /* VenueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880512E4A3D5001C2BB0 /* VenueModel.m */; };
-		1BD9881412E4A3D5001C2BB0 /* TrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880712E4A3D5001C2BB0 /* TrackModel.m */; };
-		1BD9881512E4A3D5001C2BB0 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880912E4A3D5001C2BB0 /* EventModel.m */; };
-		1BD9881612E4A3D5001C2BB0 /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880B12E4A3D5001C2BB0 /* LocationModel.m */; };
-		1BD9881712E4A3D5001C2BB0 /* PresenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880D12E4A3D5001C2BB0 /* PresenterModel.m */; };
-		1BD9881812E4A3D5001C2BB0 /* DayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9880F12E4A3D5001C2BB0 /* DayModel.m */; };
 		1BD988E912E4EA20001C2BB0 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD988E812E4EA20001C2BB0 /* clock.png */; };
 		1BD988FB12E694E8001C2BB0 /* SessionDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */; };
 		1BD9897A12E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9897912E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m */; };
 		1BD9897C12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD9897B12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib */; };
 		1BD98A4B12E6C40B001C2BB0 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */; };
+		1BD98B8912E8A349001C2BB0 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B7812E8A349001C2BB0 /* PersonModel.m */; };
+		1BD98B8B12E8A349001C2BB0 /* AttendeeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B7C12E8A349001C2BB0 /* AttendeeModel.m */; };
+		1BD98B8C12E8A349001C2BB0 /* VenueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B7E12E8A349001C2BB0 /* VenueModel.m */; };
+		1BD98B8D12E8A349001C2BB0 /* TrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8012E8A349001C2BB0 /* TrackModel.m */; };
+		1BD98B8E12E8A349001C2BB0 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8212E8A349001C2BB0 /* EventModel.m */; };
+		1BD98B8F12E8A349001C2BB0 /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8412E8A349001C2BB0 /* LocationModel.m */; };
+		1BD98B9012E8A349001C2BB0 /* PresenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8612E8A349001C2BB0 /* PresenterModel.m */; };
+		1BD98B9112E8A349001C2BB0 /* DayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8812E8A349001C2BB0 /* DayModel.m */; };
+		1BD98B9A12E91D3D001C2BB0 /* SessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B9912E91D3D001C2BB0 /* SessionModel.m */; };
 		1D3623260D0F684500981E51 /* iYAPCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iYAPCAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -65,7 +65,7 @@
 /* Begin PBXFileReference section */
 		1B2D45BB12B4819900745347 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		1B2D45BC12B4819900745347 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
-		1B2D45BD12B4819900745347 /* MainMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainMenuViewController.xib; path = Classes/MainMenuViewController.xib; sourceTree = "<group>"; };
+		1B2D45BD12B4819900745347 /* MainMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
 		1B2D45DC12B53D1100745347 /* iYAPCBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iYAPCBackground.png; sourceTree = "<group>"; };
 		1B2D45DD12B53D1100745347 /* iYAPCBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iYAPCBackground@2x.png"; sourceTree = "<group>"; };
 		1B2D45E012B53E1B00745347 /* SessionTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionTabViewController.h; sourceTree = "<group>"; };
@@ -119,24 +119,6 @@
 		1B6E188612C3D44B00C44A42 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		1BD985C912E3A0EA001C2BB0 /* PublicDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicDataManager.h; sourceTree = "<group>"; };
 		1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicDataManager.m; sourceTree = "<group>"; };
-		1BD987FE12E4A3D5001C2BB0 /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
-		1BD987FF12E4A3D5001C2BB0 /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
-		1BD9880012E4A3D5001C2BB0 /* SessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionModel.h; sourceTree = "<group>"; };
-		1BD9880112E4A3D5001C2BB0 /* SessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionModel.m; sourceTree = "<group>"; };
-		1BD9880212E4A3D5001C2BB0 /* AttendeeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeModel.h; sourceTree = "<group>"; };
-		1BD9880312E4A3D5001C2BB0 /* AttendeeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeModel.m; sourceTree = "<group>"; };
-		1BD9880412E4A3D5001C2BB0 /* VenueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueModel.h; sourceTree = "<group>"; };
-		1BD9880512E4A3D5001C2BB0 /* VenueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueModel.m; sourceTree = "<group>"; };
-		1BD9880612E4A3D5001C2BB0 /* TrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackModel.h; sourceTree = "<group>"; };
-		1BD9880712E4A3D5001C2BB0 /* TrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackModel.m; sourceTree = "<group>"; };
-		1BD9880812E4A3D5001C2BB0 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
-		1BD9880912E4A3D5001C2BB0 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
-		1BD9880A12E4A3D5001C2BB0 /* LocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationModel.h; sourceTree = "<group>"; };
-		1BD9880B12E4A3D5001C2BB0 /* LocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationModel.m; sourceTree = "<group>"; };
-		1BD9880C12E4A3D5001C2BB0 /* PresenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenterModel.h; sourceTree = "<group>"; };
-		1BD9880D12E4A3D5001C2BB0 /* PresenterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterModel.m; sourceTree = "<group>"; };
-		1BD9880E12E4A3D5001C2BB0 /* DayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayModel.h; sourceTree = "<group>"; };
-		1BD9880F12E4A3D5001C2BB0 /* DayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayModel.m; sourceTree = "<group>"; };
 		1BD988E812E4EA20001C2BB0 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		1BD988F912E694E8001C2BB0 /* SessionDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDayViewController.h; sourceTree = "<group>"; };
 		1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDayViewController.m; sourceTree = "<group>"; };
@@ -145,6 +127,24 @@
 		1BD9897B12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionSummaryTableViewCell.xib; sourceTree = "<group>"; };
 		1BD98A4912E6C40B001C2BB0 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
 		1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
+		1BD98B7712E8A349001C2BB0 /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
+		1BD98B7812E8A349001C2BB0 /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
+		1BD98B7B12E8A349001C2BB0 /* AttendeeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeModel.h; sourceTree = "<group>"; };
+		1BD98B7C12E8A349001C2BB0 /* AttendeeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeModel.m; sourceTree = "<group>"; };
+		1BD98B7D12E8A349001C2BB0 /* VenueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueModel.h; sourceTree = "<group>"; };
+		1BD98B7E12E8A349001C2BB0 /* VenueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueModel.m; sourceTree = "<group>"; };
+		1BD98B7F12E8A349001C2BB0 /* TrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackModel.h; sourceTree = "<group>"; };
+		1BD98B8012E8A349001C2BB0 /* TrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackModel.m; sourceTree = "<group>"; };
+		1BD98B8112E8A349001C2BB0 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
+		1BD98B8212E8A349001C2BB0 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
+		1BD98B8312E8A349001C2BB0 /* LocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationModel.h; sourceTree = "<group>"; };
+		1BD98B8412E8A349001C2BB0 /* LocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationModel.m; sourceTree = "<group>"; };
+		1BD98B8512E8A349001C2BB0 /* PresenterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresenterModel.h; sourceTree = "<group>"; };
+		1BD98B8612E8A349001C2BB0 /* PresenterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresenterModel.m; sourceTree = "<group>"; };
+		1BD98B8712E8A349001C2BB0 /* DayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayModel.h; sourceTree = "<group>"; };
+		1BD98B8812E8A349001C2BB0 /* DayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayModel.m; sourceTree = "<group>"; };
+		1BD98B9812E91D3D001C2BB0 /* SessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionModel.h; sourceTree = "<group>"; };
+		1BD98B9912E91D3D001C2BB0 /* SessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionModel.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* iYAPCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iYAPCAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* iYAPCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iYAPCAppDelegate.m; sourceTree = "<group>"; };
@@ -320,16 +320,11 @@
 		1BD988F812E6948E001C2BB0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				28C286DF0D94DF7D0034E888 /* RootEventViewController.h */,
-				28C286E00D94DF7D0034E888 /* RootEventViewController.m */,
-				1B2D45BB12B4819900745347 /* MainMenuViewController.h */,
-				1B2D45BC12B4819900745347 /* MainMenuViewController.m */,
-				1B2D45E012B53E1B00745347 /* SessionTabViewController.h */,
-				1B2D45E112B53E1B00745347 /* SessionTabViewController.m */,
-				1BD988F912E694E8001C2BB0 /* SessionDayViewController.h */,
-				1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */,
-				1BD98A4912E6C40B001C2BB0 /* SessionDetailViewController.h */,
-				1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */,
+				1BD98B4412E89C34001C2BB0 /* Root event view controller */,
+				1BD98B4512E89C4A001C2BB0 /* Main menu view controller */,
+				1BD98B4612E89C5A001C2BB0 /* Session tabs view controller */,
+				1BD98B4712E89C67001C2BB0 /* Session day view controller */,
+				1BD98B4812E89C76001C2BB0 /* Session detail view controller */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -341,6 +336,52 @@
 				1BD9897912E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m */,
 			);
 			name = "Table Cells";
+			sourceTree = "<group>";
+		};
+		1BD98B4412E89C34001C2BB0 /* Root event view controller */ = {
+			isa = PBXGroup;
+			children = (
+				28C286DF0D94DF7D0034E888 /* RootEventViewController.h */,
+				28C286E00D94DF7D0034E888 /* RootEventViewController.m */,
+			);
+			name = "Root event view controller";
+			sourceTree = "<group>";
+		};
+		1BD98B4512E89C4A001C2BB0 /* Main menu view controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D45BB12B4819900745347 /* MainMenuViewController.h */,
+				1B2D45BC12B4819900745347 /* MainMenuViewController.m */,
+				1B2D45BD12B4819900745347 /* MainMenuViewController.xib */,
+			);
+			name = "Main menu view controller";
+			sourceTree = "<group>";
+		};
+		1BD98B4612E89C5A001C2BB0 /* Session tabs view controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B2D45E012B53E1B00745347 /* SessionTabViewController.h */,
+				1B2D45E112B53E1B00745347 /* SessionTabViewController.m */,
+			);
+			name = "Session tabs view controller";
+			sourceTree = "<group>";
+		};
+		1BD98B4712E89C67001C2BB0 /* Session day view controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BD988F912E694E8001C2BB0 /* SessionDayViewController.h */,
+				1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */,
+			);
+			name = "Session day view controller";
+			sourceTree = "<group>";
+		};
+		1BD98B4812E89C76001C2BB0 /* Session detail view controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BD98A4912E6C40B001C2BB0 /* SessionDetailViewController.h */,
+				1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */,
+			);
+			name = "Session detail view controller";
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
@@ -375,7 +416,6 @@
 				1B2D45DB12B53D1100745347 /* Images */,
 				28D3F201112F7DC200FD0661 /* iYAPC.xcdatamodeld */,
 				2899E55F0DE3E45000AC0155 /* RootEventViewController.xib */,
-				1B2D45BD12B4819900745347 /* MainMenuViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* iYAPC-Info.plist */,
 			);
@@ -490,18 +530,18 @@
 				1B6E171812BFC51400C44A42 /* Reachability.m in Sources */,
 				1B6E186D12C0730D00C44A42 /* UserManager.m in Sources */,
 				1BD985CB12E3A0EA001C2BB0 /* PublicDataManager.m in Sources */,
-				1BD9881012E4A3D5001C2BB0 /* PersonModel.m in Sources */,
-				1BD9881112E4A3D5001C2BB0 /* SessionModel.m in Sources */,
-				1BD9881212E4A3D5001C2BB0 /* AttendeeModel.m in Sources */,
-				1BD9881312E4A3D5001C2BB0 /* VenueModel.m in Sources */,
-				1BD9881412E4A3D5001C2BB0 /* TrackModel.m in Sources */,
-				1BD9881512E4A3D5001C2BB0 /* EventModel.m in Sources */,
-				1BD9881612E4A3D5001C2BB0 /* LocationModel.m in Sources */,
-				1BD9881712E4A3D5001C2BB0 /* PresenterModel.m in Sources */,
-				1BD9881812E4A3D5001C2BB0 /* DayModel.m in Sources */,
 				1BD988FB12E694E8001C2BB0 /* SessionDayViewController.m in Sources */,
 				1BD9897A12E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m in Sources */,
 				1BD98A4B12E6C40B001C2BB0 /* SessionDetailViewController.m in Sources */,
+				1BD98B8912E8A349001C2BB0 /* PersonModel.m in Sources */,
+				1BD98B8B12E8A349001C2BB0 /* AttendeeModel.m in Sources */,
+				1BD98B8C12E8A349001C2BB0 /* VenueModel.m in Sources */,
+				1BD98B8D12E8A349001C2BB0 /* TrackModel.m in Sources */,
+				1BD98B8E12E8A349001C2BB0 /* EventModel.m in Sources */,
+				1BD98B8F12E8A349001C2BB0 /* LocationModel.m in Sources */,
+				1BD98B9012E8A349001C2BB0 /* PresenterModel.m in Sources */,
+				1BD98B9112E8A349001C2BB0 /* DayModel.m in Sources */,
+				1BD98B9A12E91D3D001C2BB0 /* SessionModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,24 +633,24 @@
 		28D3F201112F7DC200FD0661 /* iYAPC.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1BD987FE12E4A3D5001C2BB0 /* PersonModel.h */,
-				1BD987FF12E4A3D5001C2BB0 /* PersonModel.m */,
-				1BD9880012E4A3D5001C2BB0 /* SessionModel.h */,
-				1BD9880112E4A3D5001C2BB0 /* SessionModel.m */,
-				1BD9880212E4A3D5001C2BB0 /* AttendeeModel.h */,
-				1BD9880312E4A3D5001C2BB0 /* AttendeeModel.m */,
-				1BD9880412E4A3D5001C2BB0 /* VenueModel.h */,
-				1BD9880512E4A3D5001C2BB0 /* VenueModel.m */,
-				1BD9880612E4A3D5001C2BB0 /* TrackModel.h */,
-				1BD9880712E4A3D5001C2BB0 /* TrackModel.m */,
-				1BD9880812E4A3D5001C2BB0 /* EventModel.h */,
-				1BD9880912E4A3D5001C2BB0 /* EventModel.m */,
-				1BD9880A12E4A3D5001C2BB0 /* LocationModel.h */,
-				1BD9880B12E4A3D5001C2BB0 /* LocationModel.m */,
-				1BD9880C12E4A3D5001C2BB0 /* PresenterModel.h */,
-				1BD9880D12E4A3D5001C2BB0 /* PresenterModel.m */,
-				1BD9880E12E4A3D5001C2BB0 /* DayModel.h */,
-				1BD9880F12E4A3D5001C2BB0 /* DayModel.m */,
+				1BD98B9812E91D3D001C2BB0 /* SessionModel.h */,
+				1BD98B9912E91D3D001C2BB0 /* SessionModel.m */,
+				1BD98B7712E8A349001C2BB0 /* PersonModel.h */,
+				1BD98B7812E8A349001C2BB0 /* PersonModel.m */,
+				1BD98B7B12E8A349001C2BB0 /* AttendeeModel.h */,
+				1BD98B7C12E8A349001C2BB0 /* AttendeeModel.m */,
+				1BD98B7D12E8A349001C2BB0 /* VenueModel.h */,
+				1BD98B7E12E8A349001C2BB0 /* VenueModel.m */,
+				1BD98B7F12E8A349001C2BB0 /* TrackModel.h */,
+				1BD98B8012E8A349001C2BB0 /* TrackModel.m */,
+				1BD98B8112E8A349001C2BB0 /* EventModel.h */,
+				1BD98B8212E8A349001C2BB0 /* EventModel.m */,
+				1BD98B8312E8A349001C2BB0 /* LocationModel.h */,
+				1BD98B8412E8A349001C2BB0 /* LocationModel.m */,
+				1BD98B8512E8A349001C2BB0 /* PresenterModel.h */,
+				1BD98B8612E8A349001C2BB0 /* PresenterModel.m */,
+				1BD98B8712E8A349001C2BB0 /* DayModel.h */,
+				1BD98B8812E8A349001C2BB0 /* DayModel.m */,
 				28860B760F44E54D00985440 /* iYAPC.xcdatamodel */,
 			);
 			currentVersion = 28860B760F44E54D00985440 /* iYAPC.xcdatamodel */;

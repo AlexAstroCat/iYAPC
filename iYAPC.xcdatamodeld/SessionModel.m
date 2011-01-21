@@ -2,7 +2,7 @@
 //  SessionModel.m
 //  iYAPC
 //
-//  Created by Michael Nachbaur on 11-01-17.
+//  Created by Michael Nachbaur on 11-01-20.
 //  Copyright 2011 Decaf Ninja Software. All rights reserved.
 //
 
@@ -15,17 +15,18 @@
 
 @implementation SessionModel 
 
-@dynamic room;
-@dynamic revision;
-@dynamic subtitle;
-@dynamic endTime;
-@dynamic title;
-@dynamic startTime;
 @dynamic caption;
-@dynamic eventDay;
+@dynamic subtitle;
+@dynamic revision;
+@dynamic title;
+@dynamic room;
+@dynamic startTimeSection;
+@dynamic endTime;
+@dynamic startTime;
+@dynamic attendees;
 @dynamic presenters;
 @dynamic track;
-@dynamic attendees;
+@dynamic eventDay;
 
 - (NSString*)startTimeSection {
 	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
@@ -33,8 +34,7 @@
 	[dateFormatter setDateStyle:NSDateFormatterNoStyle];
 	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 	
-	NSString *dateStr = [dateFormatter stringFromDate:self.startTime];
-	return dateStr;
+	return [dateFormatter stringFromDate:self.startTime];
 }
 
 @end

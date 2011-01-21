@@ -50,10 +50,12 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
+	self.fetchedResultsController = nil;
 }
 
 
 - (void)dealloc {
+	self.managedObjectContext = nil;
 	self.eventObject = nil;
 	[self removeObserver:self forKeyPath:@"eventObject"];
 	
@@ -125,6 +127,13 @@
 }
 
 #pragma mark -
+#pragma mark UITabBarControllerDelegate methods
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+	self.navigationItem.title = viewController.navigationItem.title;
+}
+
+#pragma mark -
 #pragma mark Private methods
 
 - (void)updateTabs {
@@ -137,6 +146,8 @@
 	}
 	
 	[self setViewControllers:controllers animated:YES];
+
+	self.navigationItem.title = [[[controllers objectAtIndex:0] navigationItem] title];
 }
 
 @end

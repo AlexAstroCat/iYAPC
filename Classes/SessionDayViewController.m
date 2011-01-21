@@ -8,6 +8,7 @@
 
 #import "SessionDayViewController.h"
 #import "SessionModel.h"
+#import "SessionDetailViewController.h"
 
 @interface SessionDayViewController (Private)
 
@@ -42,36 +43,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+	[self updateTabInfo];
 }
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if ([keyPath isEqualToString:@"dayObject"]) {
@@ -92,12 +65,13 @@
 }
 
 - (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+	[super viewDidUnload];
+	self.fetchedResultsController = nil;
 }
 
 
 - (void)dealloc {
+	self.managedObjectContext = nil;
 	self.dayObject = nil;
 	[self removeObserver:self forKeyPath:@"dayObject"];
 	
@@ -110,7 +84,7 @@
 
 - (void)updateTabInfo {
 	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-	
+	[dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
 	[dateFormatter setDateFormat:@"LLL d"];
 	NSString *fullDay = [dateFormatter stringFromDate:self.dayObject.eventDate];
 	
@@ -147,9 +121,7 @@
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSString *name = nil;
-	name = [[[self.fetchedResultsController sections] objectAtIndex:section] name];
-	return name;
+    return [[[self.fetchedResultsController sections] objectAtIndex:section] name];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -213,14 +185,13 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-    */
+	SessionModel *selectedObject = (SessionModel*)[self.fetchedResultsController objectAtIndexPath:indexPath];
+
+	SessionDetailViewController *controller = [[[SessionDetailViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	controller.managedObjectContext = self.managedObjectContext;
+	controller.sessionObject = selectedObject;
+	
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark -
@@ -231,6 +202,14 @@
         return _fetchedResultsController;
     }
     
+	NSCalendar *cal = [NSCalendar currentCalendar];
+	NSDateComponents *comp = [cal components:(NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit)
+									fromDate:self.dayObject.eventDate];
+	NSDateComponents *oneDay = [[NSDateComponents alloc] init];
+	oneDay.day = 1;
+	NSDate *fromDate = [cal dateFromComponents:comp];
+	NSDate *toDate = [cal dateByAddingComponents:oneDay toDate:fromDate options:0];
+
     NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
 
 	NSArray *sortDescriptors = [NSArray arrayWithObjects:
@@ -238,7 +217,8 @@
 								[NSSortDescriptor sortDescriptorWithKey:@"endTime" ascending:YES],
 								[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES],
 								nil];
-	NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"eventDay = %@", self.dayObject];
+	
+	NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"eventDay.eventDate >= %@ AND eventDay.eventDate <= %@", fromDate, toDate];
 	
 	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Session"
 											  inManagedObjectContext:self.managedObjectContext];

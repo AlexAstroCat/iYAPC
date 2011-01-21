@@ -2,7 +2,7 @@
 //  EventModel.h
 //  iYAPC
 //
-//  Created by Michael Nachbaur on 11-01-17.
+//  Created by Michael Nachbaur on 11-01-20.
 //  Copyright 2011 Decaf Ninja Software. All rights reserved.
 //
 
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSNumber * revision;
 @property (nonatomic, retain) NSString * subtitle;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * headerImageUrl;
 @property (nonatomic, retain) NSString * locationTitle;
 @property (nonatomic, retain) NSString * caption;
 @property (nonatomic, retain) NSSet* tracks;
