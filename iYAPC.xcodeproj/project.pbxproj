@@ -120,6 +120,7 @@
 		1B6E188612C3D44B00C44A42 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		1B7999AC12E9E8E5000813BA /* TPFLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TPFLogo.png; sourceTree = "<group>"; };
 		1B7999AD12E9E8E5000813BA /* TPFLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TPFLogo@2x.png"; sourceTree = "<group>"; };
+		1B7999CB12E9EEAB000813BA /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		1BD985C912E3A0EA001C2BB0 /* PublicDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicDataManager.h; sourceTree = "<group>"; };
 		1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicDataManager.m; sourceTree = "<group>"; };
 		1BD988F912E694E8001C2BB0 /* SessionDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDayViewController.h; sourceTree = "<group>"; };
@@ -408,6 +409,7 @@
 				28A0AAE50D9B0CCF005BE974 /* iYAPC_Prefix.pch */,
 				1B2D481F12B9D10400745347 /* iYAPC_Constants.h */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				1B7999CB12E9EEAB000813BA /* Entitlements.plist */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -552,10 +554,44 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		1B7999C912E9EE89000813BA /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Decaf Ninja Software";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "286D4FBF-1DA7-4AEA-820F-12D9A66AFADD";
+				SDKROOT = iphoneos;
+			};
+			name = Distribution;
+		};
+		1B7999CA12E9EE89000813BA /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Desktop/Projects/iYAPC/Entitlements.plist";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iYAPC_Prefix.pch;
+				INFOPLIST_FILE = "iYAPC-Info.plist";
+				LIBRARY_SEARCH_PATHS = /usr/include/libxml2;
+				PRODUCT_NAME = iYAPC;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Desktop/Projects/iYAPC/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -571,6 +607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Desktop/Projects/iYAPC/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iYAPC_Prefix.pch;
@@ -590,6 +627,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
@@ -599,13 +637,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Decaf Ninja Software";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "01311B97-0135-4DF3-BB39-CF1963AEE464";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -618,6 +658,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				1B7999CA12E9EE89000813BA /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -627,6 +668,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				1B7999C912E9EE89000813BA /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
