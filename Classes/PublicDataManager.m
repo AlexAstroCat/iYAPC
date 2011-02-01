@@ -51,7 +51,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PublicDataManager);
 	if (self.currentObjectSync)
 		[self cancel];
 	
-	_currentObjectSync = [[ManagedObjectXMLSync alloc] initWithManagedObjectContext:self.managedObjectContext
+	_currentObjectSync = [[DNManagedObjectXMLSync alloc] initWithManagedObjectContext:self.managedObjectContext
 															 withManagedObjectModel:self.managedObjectModel];
 	return [_currentObjectSync syncContentsOfURL:self.dataUrl];
 }

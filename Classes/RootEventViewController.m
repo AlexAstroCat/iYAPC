@@ -9,6 +9,7 @@
 #import "RootEventViewController.h"
 #import "MainMenuViewController.h"
 #import "EventModel.h"
+#import "DNFetchedRequestManager.h"
 
 @interface RootEventViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -34,49 +35,21 @@
 		EventModel *theEvent = [[self.fetchedResultsController fetchedObjects] lastObject];
 		[self navigateToItem:theEvent animated:NO];
 	}
-	
-	/*
-    // Set up the edit and add buttons.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    [addButton release];
-	 */
 }
 
-
-// Implement viewWillAppear: to do additional setup before the view is presented.
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
 
-/*
- // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    self.fetchedResultsController = nil;
 }
- */
 
+#pragma mark -
+#pragma mark Memory management
 
+- (void)dealloc {
+	self.managedObjectContext = nil;
+    [super dealloc];
+}
 
 #pragma mark -
 #pragma mark Private Methods
@@ -195,29 +168,16 @@
         return _fetchedResultsController;
     }
     
-    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    [fetchRequest setFetchBatchSize:20];
-    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:
-									  [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES],
-									  nil]];
-    
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-																								managedObjectContext:self.managedObjectContext
-																								  sectionNameKeyPath:nil
-																										   cacheName:@"RootEvent"];
-    aFetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;    
-    [aFetchedResultsController release];
+	self.fetchedResultsController = [[DNFetchedRequestManager sharedInstance] resultsControllerInContext:self.managedObjectContext
+																						   forEntityName:@"Event"
+																						   withPredicate:nil
+																					  withSectionKeyPath:nil
+																						  usingCacheName:@"RootEventList"
+																								sortedBy:@"title"];
+    self.fetchedResultsController.delegate = self;
     
     NSError *error = nil;
     if (![_fetchedResultsController performFetch:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
@@ -291,29 +251,6 @@
     [self.tableView reloadData];
 }
  */
-
-
-#pragma mark -
-#pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc that aren't in use.
-}
-
-
-- (void)viewDidUnload {
-	[super viewDidUnload];
-	self.fetchedResultsController = nil;
-}
-
-
-- (void)dealloc {
-	self.managedObjectContext = nil;
-    [super dealloc];
-}
 
 
 @end

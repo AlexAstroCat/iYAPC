@@ -19,6 +19,6 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, retain) DayModel *dayObject;
+@property (nonatomic, assign) DayModel *dayObject;
 
 @end

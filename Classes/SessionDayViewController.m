@@ -9,6 +9,7 @@
 #import "SessionDayViewController.h"
 #import "SessionModel.h"
 #import "SessionDetailViewController.h"
+#import "DNFetchedRequestManager.h"
 
 @interface SessionDayViewController (Private)
 
@@ -48,6 +49,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if ([keyPath isEqualToString:@"dayObject"]) {
+		self.fetchedResultsController = nil;
 		[self updateTabInfo];
 	} else {
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -72,7 +74,6 @@
 
 - (void)dealloc {
 	self.managedObjectContext = nil;
-	self.dayObject = nil;
 	[self removeObserver:self forKeyPath:@"dayObject"];
 	
     [super dealloc];
@@ -146,15 +147,6 @@
 }
 
 
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -202,47 +194,19 @@
         return _fetchedResultsController;
     }
     
-	NSCalendar *cal = [NSCalendar currentCalendar];
-	NSDateComponents *comp = [cal components:(NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit)
-									fromDate:self.dayObject.eventDate];
-	NSDateComponents *oneDay = [[NSDateComponents alloc] init];
-	oneDay.day = 1;
-	NSDate *fromDate = [cal dateFromComponents:comp];
-	NSDate *toDate = [cal dateByAddingComponents:oneDay toDate:fromDate options:0];
-
-    NSFetchRequest *fetchRequest = [[[NSFetchRequest alloc] init] autorelease];
-
-	NSArray *sortDescriptors = [NSArray arrayWithObjects:
-								[NSSortDescriptor sortDescriptorWithKey:@"startTime" ascending:YES],
-								[NSSortDescriptor sortDescriptorWithKey:@"endTime" ascending:YES],
-								[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES],
-								nil];
-	
-	NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"eventDay.eventDate >= %@ AND eventDay.eventDate <= %@", fromDate, toDate];
-	
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Session"
-											  inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    [fetchRequest setFetchBatchSize:20];
-    [fetchRequest setSortDescriptors:sortDescriptors];
-	[fetchRequest setPredicate:searchPredicate];
-
-    NSString *cacheName = [[self.dayObject objectID] description];
-    NSFetchedResultsController *fetchedResults = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-																					 managedObjectContext:self.managedObjectContext
-																					   sectionNameKeyPath:@"startTimeSection"
-																								cacheName:cacheName];
-    fetchedResults.delegate = self;
-    self.fetchedResultsController = fetchedResults;    
-    [fetchedResults release];
-    
+	NSArray *sortDescriptors = [NSArray arrayWithObjects:@"startTime", @"endTime", @"title", nil];
+	NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"eventDay = %@", self.dayObject];
+	NSString *cacheName = [NSString stringWithFormat:@"SessionListing%@", [self.dayObject objectID]];
+	self.fetchedResultsController = [[DNFetchedRequestManager sharedInstance] resultsControllerInContext:self.managedObjectContext
+																						   forEntityName:@"Session"
+																						   withPredicate:searchPredicate
+																					  withSectionKeyPath:@"startTimeSection"
+																						  usingCacheName:cacheName
+																								sortedBy:sortDescriptors];
+    self.fetchedResultsController.delegate = self;
+	    
     NSError *error = nil;
     if (![_fetchedResultsController performFetch:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
@@ -306,16 +270,6 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
 }
-
-
-/*
- // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
- // In the simplest, most efficient, case, reload the table view.
- [self.tableView reloadData];
- }
- */
 
 
 @end

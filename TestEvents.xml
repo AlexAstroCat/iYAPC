@@ -43,41 +43,6 @@
 		<eventDate>2011-06-15</eventDate>
 		<event title="YAPC::NA 2011"/>
 	</Day>
-	<Track>
-		<revision>1</revision>
-		<title>cPanel.net (GH3)</title>
-		<caption>This is the description for this track</caption>
-		<order>1</order>
-		<event title="YAPC::NA 2011"/>
-	</Track>
-	<Track>
-		<revision>1</revision>
-		<title>Grant Street Group (Senate)</title>
-		<caption>This is the description for the other track</caption>
-		<order>2</order>
-		<event title="YAPC::NA 2011"/>
-	</Track>
-	<Track>
-		<revision>1</revision>
-		<title>cPanel.net (GH1)</title>
-		<caption>The other description</caption>
-		<order>3</order>
-		<event title="YAPC::NA 2011"/>
-	</Track>
-	<Track>
-		<revision>1</revision>
-		<title>Nationwide (Cartoon 1)</title>
-		<caption>The funnily-named description</caption>
-		<order>4</order>
-		<event title="YAPC::NA 2011"/>
-	</Track>
-	<Track>
-		<revision>1</revision>
-		<title>Nationwide (Cartoon 2)</title>
-		<caption>Another oddly-named caption</caption>
-		<order>5</order>
-		<event title="YAPC::NA 2011"/>
-	</Track>
 	<Session>
 		<revision>3</revision>
 		<title>Intro to Moose</title>

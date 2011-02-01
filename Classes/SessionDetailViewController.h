@@ -17,7 +17,7 @@
 }
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain) SessionModel *sessionObject;
+@property (nonatomic, assign) SessionModel *sessionObject;
 
 
 @end

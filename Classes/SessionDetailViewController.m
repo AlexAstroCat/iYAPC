@@ -8,6 +8,12 @@
 
 #import "SessionDetailViewController.h"
 
+typedef enum {
+	SessionDetailViewControllerSectionSummary,
+	SessionDetailViewControllerSectionDescription,
+	SessionDetailViewControllerSectionActions
+} SessionDetailViewControllerSection;
+
 @interface SessionDetailViewController (Private)
 
 - (void)updateSessionObject;
@@ -55,22 +61,10 @@
 #pragma mark -
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc. that aren't in use.
-}
-
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
-
 - (void)dealloc {
 	self.managedObjectContext = nil;
 	[self removeObserver:self forKeyPath:@"sessionObject"];
+
     [super dealloc];
 }
 
@@ -79,9 +73,27 @@
 
 - (void)updateSessionObject {
 	self.navigationItem.title = self.sessionObject.title;
+        [self.tableView reloadData];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+	switch (indexPath.section) {
+		case SessionDetailViewControllerSectionSummary: {
+			break;
+		}
+			
+		case SessionDetailViewControllerSectionDescription: {
+			cell.textLabel.text = @"Foo";
+			break;
+		}
+			
+		case SessionDetailViewControllerSectionActions: {
+			break;
+		}
+
+		default:
+			break;
+	}
 //    cell.textLabel.text = session.title;
 //	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", startTimeStr, endTimeStr];
 //	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -91,23 +103,61 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 3;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 0;
+	switch (section) {
+		case SessionDetailViewControllerSectionSummary:
+			return 0;
+			
+		case SessionDetailViewControllerSectionDescription:
+			return 1;
+			
+		case SessionDetailViewControllerSectionActions:
+			return 0;
+			
+		default:
+			return 0;
+	}
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"SessionDetailCell";
+    NSString *cellIdentifier;
+	UITableViewCellStyle cellStyle;
+	switch (indexPath.section) {
+		case SessionDetailViewControllerSectionSummary: {
+			if (indexPath.row == 0) {
+				cellIdentifier = @"DetailSectionIcon";
+				cellStyle = UITableViewCellStyleDefault;
+			} else {
+				cellIdentifier = @"DetailSectionInfo";
+				cellStyle = UITableViewCellStyleValue1;
+			}
+			break;
+		}
+			
+		case SessionDetailViewControllerSectionActions: {
+			cellIdentifier = @"DetailSectionAction";
+			cellStyle = UITableViewCellStyleSubtitle;
+			break;
+		}
+
+		case SessionDetailViewControllerSectionDescription:
+		default: {
+			cellIdentifier = @"DetailSectionDescription";
+			cellStyle = UITableViewCellStyleDefault;
+			break;
+		}
+	}
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:cellStyle reuseIdentifier:cellIdentifier] autorelease];
     }
     
     [self configureCell:cell atIndexPath:indexPath];

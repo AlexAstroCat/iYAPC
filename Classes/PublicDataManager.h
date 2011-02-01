@@ -9,20 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "SynthesizeSingleton.h"
 
-#import "ManagedObjectXMLSync.h"
+#import "DNManagedObjectXMLSync.h"
 
 @interface PublicDataManager : NSObject {
     NSManagedObjectContext *_managedObjectContext;
 	NSManagedObjectModel *_managedObjectModel;
 
-	ManagedObjectXMLSync *_currentObjectSync;
+	DNManagedObjectXMLSync *_currentObjectSync;
 	BOOL _isReloading;
 	NSURL *_dataUrl;
 }
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, readonly) ManagedObjectXMLSync *currentObjectSync;
+@property (nonatomic, readonly) DNManagedObjectXMLSync *currentObjectSync;
 @property (nonatomic, retain) NSURL *dataUrl;
 @property (nonatomic) BOOL isReloading;
 

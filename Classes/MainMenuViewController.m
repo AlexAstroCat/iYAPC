@@ -12,6 +12,8 @@
 #import "SessionTabViewController.h"
 #import "SessionDayViewController.h"
 
+#import "DNFetchedRequestManager.h"
+
 typedef enum {
 	MainMenuViewControllerViewTagNone,
 	MainMenuViewControllerViewTagRoundedBox
@@ -21,17 +23,6 @@ typedef enum {
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize eventObject = _eventObject;
 @synthesize headerImageView = _headerImageView;
-
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
-}
-*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,26 +42,9 @@ typedef enum {
 	}
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-
 - (void)dealloc {
 	self.managedObjectContext = nil;
+
     [super dealloc];
 }
 
@@ -78,15 +52,33 @@ typedef enum {
 #pragma mark Actions
 
 - (IBAction)peopleButtonTapped:(id)sender {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not implemented"
+													message:@"This feature isn't finished yet. Sorry!"
+												   delegate:nil
+										  cancelButtonTitle:@"OK"
+										  otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 - (IBAction)myProfileButtonTapped:(id)sender {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not implemented"
+													message:@"This feature isn't finished yet. Sorry!"
+												   delegate:nil
+										  cancelButtonTitle:@"OK"
+										  otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 - (IBAction)myScheduleButtonTapped:(id)sender {
-}
-
-- (IBAction)tracksButtonTapped:(id)sender {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not implemented"
+													message:@"This feature isn't finished yet. Sorry!"
+												   delegate:nil
+										  cancelButtonTitle:@"OK"
+										  otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 - (IBAction)sessionsButtonTapped:(id)sender {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B180A7012ED00A000FDA433 /* libDNAdditions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B180A6F12ED00A000FDA433 /* libDNAdditions.a */; };
 		1B2D45BE12B4819900745347 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D45BC12B4819900745347 /* MainMenuViewController.m */; };
 		1B2D45BF12B4819900745347 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D45BD12B4819900745347 /* MainMenuViewController.xib */; };
 		1B2D45DE12B53D1100745347 /* iYAPCBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D45DC12B53D1100745347 /* iYAPCBackground.png */; };
@@ -30,7 +31,6 @@
 		1B2D470D12B977B000745347 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2D470C12B977B000745347 /* SystemConfiguration.framework */; };
 		1B2D471112B977B700745347 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2D471012B977B700745347 /* MobileCoreServices.framework */; };
 		1B2D471512B977D100745347 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2D471412B977D100745347 /* libz.1.2.3.dylib */; };
-		1B2D483212BA6F2000745347 /* ManagedObjectXMLSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D483112BA6F2000745347 /* ManagedObjectXMLSync.m */; };
 		1B2D483712BA703100745347 /* TestEvents.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D483612BA703100745347 /* TestEvents.xml */; };
 		1B6E171812BFC51400C44A42 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E171712BFC51400C44A42 /* Reachability.m */; };
 		1B6E186D12C0730D00C44A42 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E186C12C0730D00C44A42 /* UserManager.m */; };
@@ -45,7 +45,6 @@
 		1BD98B8912E8A349001C2BB0 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B7812E8A349001C2BB0 /* PersonModel.m */; };
 		1BD98B8B12E8A349001C2BB0 /* AttendeeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B7C12E8A349001C2BB0 /* AttendeeModel.m */; };
 		1BD98B8C12E8A349001C2BB0 /* VenueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B7E12E8A349001C2BB0 /* VenueModel.m */; };
-		1BD98B8D12E8A349001C2BB0 /* TrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8012E8A349001C2BB0 /* TrackModel.m */; };
 		1BD98B8E12E8A349001C2BB0 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8212E8A349001C2BB0 /* EventModel.m */; };
 		1BD98B8F12E8A349001C2BB0 /* LocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8412E8A349001C2BB0 /* LocationModel.m */; };
 		1BD98B9012E8A349001C2BB0 /* PresenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8612E8A349001C2BB0 /* PresenterModel.m */; };
@@ -64,6 +63,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B180A6D12ED00A000FDA433 /* DNFetchedRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNFetchedRequestManager.h; sourceTree = "<group>"; };
+		1B180A6E12ED00A000FDA433 /* DNManagedObjectXMLSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNManagedObjectXMLSync.h; sourceTree = "<group>"; };
+		1B180A6F12ED00A000FDA433 /* libDNAdditions.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDNAdditions.a; sourceTree = "<group>"; };
 		1B2D45BB12B4819900745347 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		1B2D45BC12B4819900745347 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		1B2D45BD12B4819900745347 /* MainMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -110,8 +112,6 @@
 		1B2D471012B977B700745347 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1B2D471412B977D100745347 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		1B2D481F12B9D10400745347 /* iYAPC_Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iYAPC_Constants.h; sourceTree = "<group>"; };
-		1B2D483012BA6F2000745347 /* ManagedObjectXMLSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedObjectXMLSync.h; sourceTree = "<group>"; };
-		1B2D483112BA6F2000745347 /* ManagedObjectXMLSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedObjectXMLSync.m; sourceTree = "<group>"; };
 		1B2D483612BA703100745347 /* TestEvents.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestEvents.xml; sourceTree = "<group>"; };
 		1B6E171612BFC51400C44A42 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "Libraries/asi-http-request/External/Reachability/Reachability.h"; sourceTree = "<group>"; };
 		1B6E171712BFC51400C44A42 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "Libraries/asi-http-request/External/Reachability/Reachability.m"; sourceTree = "<group>"; };
@@ -136,8 +136,6 @@
 		1BD98B7C12E8A349001C2BB0 /* AttendeeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeModel.m; sourceTree = "<group>"; };
 		1BD98B7D12E8A349001C2BB0 /* VenueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueModel.h; sourceTree = "<group>"; };
 		1BD98B7E12E8A349001C2BB0 /* VenueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueModel.m; sourceTree = "<group>"; };
-		1BD98B7F12E8A349001C2BB0 /* TrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackModel.h; sourceTree = "<group>"; };
-		1BD98B8012E8A349001C2BB0 /* TrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackModel.m; sourceTree = "<group>"; };
 		1BD98B8112E8A349001C2BB0 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		1BD98B8212E8A349001C2BB0 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		1BD98B8312E8A349001C2BB0 /* LocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationModel.h; sourceTree = "<group>"; };
@@ -179,6 +177,7 @@
 				1B2D471112B977B700745347 /* MobileCoreServices.framework in Frameworks */,
 				1B2D471512B977D100745347 /* libz.1.2.3.dylib in Frameworks */,
 				1B6E195512C3F75C00C44A42 /* libxml2.2.dylib in Frameworks */,
+				1B180A7012ED00A000FDA433 /* libDNAdditions.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +203,25 @@
 				1D6058910D05DD3D006BFB54 /* iYAPC.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1B180A6B12ED00A000FDA433 /* DNAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				1B180A6C12ED00A000FDA433 /* Headers */,
+				1B180A6F12ED00A000FDA433 /* libDNAdditions.a */,
+			);
+			name = DNAdditions;
+			path = Libraries/DNAdditions;
+			sourceTree = "<group>";
+		};
+		1B180A6C12ED00A000FDA433 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				1B180A6D12ED00A000FDA433 /* DNFetchedRequestManager.h */,
+				1B180A6E12ED00A000FDA433 /* DNManagedObjectXMLSync.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		1B2D45DB12B53D1100745347 /* Images */ = {
@@ -233,6 +251,7 @@
 		1B2D46C812B9773900745347 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1B180A6B12ED00A000FDA433 /* DNAdditions */,
 				1B6E171912BFC51700C44A42 /* Reachability */,
 				1B2D470212B9778700745347 /* asi-http-request */,
 			);
@@ -298,8 +317,6 @@
 		1B2D482F12BA6F0700745347 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
-				1B2D483012BA6F2000745347 /* ManagedObjectXMLSync.h */,
-				1B2D483112BA6F2000745347 /* ManagedObjectXMLSync.m */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -532,7 +549,6 @@
 				1B2D46FF12B9778200745347 /* ASIS3ObjectRequest.m in Sources */,
 				1B2D470012B9778200745347 /* ASIS3Request.m in Sources */,
 				1B2D470112B9778200745347 /* ASIS3ServiceRequest.m in Sources */,
-				1B2D483212BA6F2000745347 /* ManagedObjectXMLSync.m in Sources */,
 				1B6E171812BFC51400C44A42 /* Reachability.m in Sources */,
 				1B6E186D12C0730D00C44A42 /* UserManager.m in Sources */,
 				1BD985CB12E3A0EA001C2BB0 /* PublicDataManager.m in Sources */,
@@ -542,7 +558,6 @@
 				1BD98B8912E8A349001C2BB0 /* PersonModel.m in Sources */,
 				1BD98B8B12E8A349001C2BB0 /* AttendeeModel.m in Sources */,
 				1BD98B8C12E8A349001C2BB0 /* VenueModel.m in Sources */,
-				1BD98B8D12E8A349001C2BB0 /* TrackModel.m in Sources */,
 				1BD98B8E12E8A349001C2BB0 /* EventModel.m in Sources */,
 				1BD98B8F12E8A349001C2BB0 /* LocationModel.m in Sources */,
 				1BD98B9012E8A349001C2BB0 /* PresenterModel.m in Sources */,
@@ -566,22 +581,28 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "286D4FBF-1DA7-4AEA-820F-12D9A66AFADD";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = ../DNAdditions/Headers;
 			};
 			name = Distribution;
 		};
 		1B7999CA12E9EE89000813BA /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "~/Desktop/Projects/iYAPC/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iYAPC_Prefix.pch;
 				INFOPLIST_FILE = "iYAPC-Info.plist";
-				LIBRARY_SEARCH_PATHS = /usr/include/libxml2;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					"\"$(SRCROOT)/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Libraries/DNAdditions\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = iYAPC;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -590,7 +611,6 @@
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "~/Desktop/Projects/iYAPC/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -598,7 +618,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iYAPC_Prefix.pch;
 				INFOPLIST_FILE = "iYAPC-Info.plist";
-				LIBRARY_SEARCH_PATHS = /usr/include/libxml2;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					"\"$(SRCROOT)/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Libraries/DNAdditions\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = iYAPC;
 			};
 			name = Debug;
@@ -606,13 +631,17 @@
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "~/Desktop/Projects/iYAPC/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iYAPC_Prefix.pch;
 				INFOPLIST_FILE = "iYAPC-Info.plist";
-				LIBRARY_SEARCH_PATHS = /usr/include/libxml2;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					"\"$(SRCROOT)/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Libraries/DNAdditions\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = iYAPC;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -628,8 +657,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
+				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = ../DNAdditions/Headers;
 			};
 			name = Debug;
 		};
@@ -644,9 +675,11 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "01311B97-0135-4DF3-BB39-CF1963AEE464";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = ../DNAdditions/Headers;
 			};
 			name = Release;
 		};
@@ -687,8 +720,6 @@
 				1BD98B7C12E8A349001C2BB0 /* AttendeeModel.m */,
 				1BD98B7D12E8A349001C2BB0 /* VenueModel.h */,
 				1BD98B7E12E8A349001C2BB0 /* VenueModel.m */,
-				1BD98B7F12E8A349001C2BB0 /* TrackModel.h */,
-				1BD98B8012E8A349001C2BB0 /* TrackModel.m */,
 				1BD98B8112E8A349001C2BB0 /* EventModel.h */,
 				1BD98B8212E8A349001C2BB0 /* EventModel.m */,
 				1BD98B8312E8A349001C2BB0 /* LocationModel.h */,

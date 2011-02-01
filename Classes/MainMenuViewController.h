@@ -18,13 +18,12 @@
 }
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain) EventModel *eventObject;
+@property (nonatomic, assign) EventModel *eventObject;
 @property (nonatomic, retain) IBOutlet UIImageView *headerImageView;
 
 - (IBAction)peopleButtonTapped:(id)sender;
 - (IBAction)myProfileButtonTapped:(id)sender;
 - (IBAction)myScheduleButtonTapped:(id)sender;
-- (IBAction)tracksButtonTapped:(id)sender;
 - (IBAction)sessionsButtonTapped:(id)sender;
 - (IBAction)venueButtonTapped:(id)sender;
 - (IBAction)sponsorsButtonTapped:(id)sender;

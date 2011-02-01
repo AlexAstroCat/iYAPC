@@ -19,6 +19,6 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, retain) EventModel *eventObject;
+@property (nonatomic, assign) EventModel *eventObject;
 
 @end
