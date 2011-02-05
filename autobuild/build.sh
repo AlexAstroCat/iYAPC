@@ -6,7 +6,6 @@ function failed()
 }
 
 set -ex
-git clean -dfx
 
 export OUTPUT=$WORKSPACE/output
 rm -rf $OUTPUT
