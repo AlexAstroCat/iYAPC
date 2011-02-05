@@ -1,0 +1,14 @@
+iYAPC
+=====
+
+iYAPC is an iPhone application aimed at helping to a) promote YAPC and other Perl-related workshops, b) help attendees manage their conference
+schedules, c) help people find their way around, d) find out more about conferences and collaborate with other attendees.
+
+It is currently under active development, and is still very Alpha. But the code is Open Source, and the goal is to contribute this to the greater Perl
+Community.
+
+![Screenshot 1](https://public.me.com/ix/mikenachbaur/iYAPC/Screenshot1.png)
+![Screenshot 2](https://public.me.com/ix/mikenachbaur/iYAPC/Screenshot2.png)
+![Screenshot 3](https://public.me.com/ix/mikenachbaur/iYAPC/Screenshot3.png)
+![Screenshot 4](https://public.me.com/ix/mikenachbaur/iYAPC/Screenshot4.png)
+![Screenshot 5](https://public.me.com/ix/mikenachbaur/iYAPC/Screenshot5.png)
