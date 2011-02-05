@@ -33,7 +33,7 @@ for config in $CONFIGURATIONS; do
 
     if [ "x$config" = "xDistribution" ]; then
         app_path=$(ls -d build/$config-iphoneos/*.app)
-        xcrun -sdk iphoneos PackageApplication -v "$app_path" -o "$ipaname" --sign "$codesign" --embed "$cert"
+        xcrun -sdk iphoneos PackageApplication "$app_path" -o "$ipaname" --sign "$codesign" --embed "$cert"
     else
         (
             cd build/$config-iphoneos || failed "no build output";
