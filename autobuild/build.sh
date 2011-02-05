@@ -22,7 +22,6 @@ agvtool new-version -all $BUILD_NUMBER
 for config in $CONFIGURATIONS; do
     provision=$(eval echo \$`echo Provision$config`)
     codesign=$(eval echo \$`echo Codesign$config`)
-    app_path=$(ls -d build/$config-iphoneos/*.app)
 
     cert="$WORKSPACE/autobuild/$provision"
     archive="$OUTPUT/$JOB_NAME-$BUILD_NUMBER-$config.zip";
@@ -33,6 +32,7 @@ for config in $CONFIGURATIONS; do
     xcodebuild -activetarget -configuration $config build || failed build;
 
     if [ "x$config" = "xDistribution" ]; then
+        app_path=$(ls -d build/$config-iphoneos/*.app)
         xcrun -sdk iphoneos PackageApplication -v "$app_path" -o "$ipaname" --sign "$codesign" --embed "$cert"
     else
         (
