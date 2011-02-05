@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B180A7012ED00A000FDA433 /* libDNAdditions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B180A6F12ED00A000FDA433 /* libDNAdditions.a */; };
 		1B2D45BE12B4819900745347 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D45BC12B4819900745347 /* MainMenuViewController.m */; };
 		1B2D45BF12B4819900745347 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D45BD12B4819900745347 /* MainMenuViewController.xib */; };
 		1B2D45DE12B53D1100745347 /* iYAPCBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D45DC12B53D1100745347 /* iYAPCBackground.png */; };
@@ -39,10 +38,9 @@
 		1B7999AF12E9E8E5000813BA /* TPFLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B7999AD12E9E8E5000813BA /* TPFLogo@2x.png */; };
 		1BB16B9812FA74A400123D6A /* TrackSessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB16B9712FA74A400123D6A /* TrackSessionsViewController.m */; };
 		1BB16C3612FCEAB300123D6A /* SessionSummaryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB16C3512FCEAB300123D6A /* SessionSummaryHeaderView.m */; };
+		1BD67E3B12FDF01300C689AC /* liblibDecafNinja.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD67E3712FDF01300C689AC /* liblibDecafNinja.a */; };
 		1BD985CB12E3A0EA001C2BB0 /* PublicDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */; };
 		1BD988FB12E694E8001C2BB0 /* SessionDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */; };
-		1BD9897A12E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9897912E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m */; };
-		1BD9897C12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD9897B12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib */; };
 		1BD98A4B12E6C40B001C2BB0 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */; };
 		1BD98B8912E8A349001C2BB0 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B7812E8A349001C2BB0 /* PersonModel.m */; };
 		1BD98B8B12E8A349001C2BB0 /* AttendeeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B7C12E8A349001C2BB0 /* AttendeeModel.m */; };
@@ -68,9 +66,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B180A6D12ED00A000FDA433 /* DNFetchedRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNFetchedRequestManager.h; sourceTree = "<group>"; };
-		1B180A6E12ED00A000FDA433 /* DNManagedObjectXMLSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNManagedObjectXMLSync.h; sourceTree = "<group>"; };
-		1B180A6F12ED00A000FDA433 /* libDNAdditions.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDNAdditions.a; sourceTree = "<group>"; };
 		1B2D45BB12B4819900745347 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		1B2D45BC12B4819900745347 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		1B2D45BD12B4819900745347 /* MainMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -130,13 +125,13 @@
 		1BB16B9712FA74A400123D6A /* TrackSessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackSessionsViewController.m; sourceTree = "<group>"; };
 		1BB16C3412FCEAB300123D6A /* SessionSummaryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionSummaryHeaderView.h; sourceTree = "<group>"; };
 		1BB16C3512FCEAB300123D6A /* SessionSummaryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionSummaryHeaderView.m; sourceTree = "<group>"; };
+		1BD67E3712FDF01300C689AC /* liblibDecafNinja.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblibDecafNinja.a; path = "libDecafNinja/build/Release-iphoneos/liblibDecafNinja.a"; sourceTree = SOURCE_ROOT; };
+		1BD67E3912FDF01300C689AC /* DNFetchedRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNFetchedRequestManager.h; sourceTree = "<group>"; };
+		1BD67E3A12FDF01300C689AC /* DNManagedObjectXMLSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNManagedObjectXMLSync.h; sourceTree = "<group>"; };
 		1BD985C912E3A0EA001C2BB0 /* PublicDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicDataManager.h; sourceTree = "<group>"; };
 		1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicDataManager.m; sourceTree = "<group>"; };
 		1BD988F912E694E8001C2BB0 /* SessionDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDayViewController.h; sourceTree = "<group>"; };
 		1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDayViewController.m; sourceTree = "<group>"; };
-		1BD9897812E6ACFF001C2BB0 /* SessionSummaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionSummaryTableViewCell.h; sourceTree = "<group>"; };
-		1BD9897912E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionSummaryTableViewCell.m; sourceTree = "<group>"; };
-		1BD9897B12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionSummaryTableViewCell.xib; sourceTree = "<group>"; };
 		1BD98A4912E6C40B001C2BB0 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
 		1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
 		1BD98B7712E8A349001C2BB0 /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
@@ -192,7 +187,7 @@
 				1B2D471112B977B700745347 /* MobileCoreServices.framework in Frameworks */,
 				1B2D471512B977D100745347 /* libz.1.2.3.dylib in Frameworks */,
 				1B6E195512C3F75C00C44A42 /* libxml2.2.dylib in Frameworks */,
-				1B180A7012ED00A000FDA433 /* libDNAdditions.a in Frameworks */,
+				1BD67E3B12FDF01300C689AC /* liblibDecafNinja.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +197,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1BD9897412E6ABC9001C2BB0 /* Table Cells */,
 				1BD988F812E6948E001C2BB0 /* View Controllers */,
 				1B2D481B12B9CF4200745347 /* Utilities */,
 				1B2D46C312B974A100745347 /* Network Interface */,
@@ -223,20 +217,11 @@
 		1B180A6B12ED00A000FDA433 /* DNAdditions */ = {
 			isa = PBXGroup;
 			children = (
-				1B180A6C12ED00A000FDA433 /* Headers */,
-				1B180A6F12ED00A000FDA433 /* libDNAdditions.a */,
+				1BD67E3712FDF01300C689AC /* liblibDecafNinja.a */,
+				1BD67E3812FDF01300C689AC /* Headers */,
 			);
 			name = DNAdditions;
 			path = Libraries/DNAdditions;
-			sourceTree = "<group>";
-		};
-		1B180A6C12ED00A000FDA433 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				1B180A6D12ED00A000FDA433 /* DNFetchedRequestManager.h */,
-				1B180A6E12ED00A000FDA433 /* DNManagedObjectXMLSync.h */,
-			);
-			path = Headers;
 			sourceTree = "<group>";
 		};
 		1B2D45DB12B53D1100745347 /* Images */ = {
@@ -364,6 +349,16 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		1BD67E3812FDF01300C689AC /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				1BD67E3912FDF01300C689AC /* DNFetchedRequestManager.h */,
+				1BD67E3A12FDF01300C689AC /* DNManagedObjectXMLSync.h */,
+			);
+			name = Headers;
+			path = "libDecafNinja/build/Release-iphoneos/Headers";
+			sourceTree = SOURCE_ROOT;
+		};
 		1BD988F812E6948E001C2BB0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,15 +370,6 @@
 				1BD98B4812E89C76001C2BB0 /* Session detail view controller */,
 			);
 			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		1BD9897412E6ABC9001C2BB0 /* Table Cells */ = {
-			isa = PBXGroup;
-			children = (
-				1BD9897812E6ACFF001C2BB0 /* SessionSummaryTableViewCell.h */,
-				1BD9897912E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m */,
-			);
-			name = "Table Cells";
 			sourceTree = "<group>";
 		};
 		1BD98B4412E89C34001C2BB0 /* Root event view controller */ = {
@@ -453,7 +439,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				1BD9897B12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -555,7 +540,6 @@
 				1B2D45DE12B53D1100745347 /* iYAPCBackground.png in Resources */,
 				1B2D45DF12B53D1100745347 /* iYAPCBackground@2x.png in Resources */,
 				1B2D483712BA703100745347 /* TestEvents.xml in Resources */,
-				1BD9897C12E6B293001C2BB0 /* SessionSummaryTableViewCell.xib in Resources */,
 				1B7999AE12E9E8E5000813BA /* TPFLogo.png in Resources */,
 				1B7999AF12E9E8E5000813BA /* TPFLogo@2x.png in Resources */,
 			);
@@ -592,7 +576,6 @@
 				1B6E186D12C0730D00C44A42 /* UserManager.m in Sources */,
 				1BD985CB12E3A0EA001C2BB0 /* PublicDataManager.m in Sources */,
 				1BD988FB12E694E8001C2BB0 /* SessionDayViewController.m in Sources */,
-				1BD9897A12E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m in Sources */,
 				1BD98A4B12E6C40B001C2BB0 /* SessionDetailViewController.m in Sources */,
 				1BD98B8912E8A349001C2BB0 /* PersonModel.m in Sources */,
 				1BD98B8B12E8A349001C2BB0 /* AttendeeModel.m in Sources */,
@@ -645,6 +628,7 @@
 					/usr/include/libxml2,
 					"\"$(SRCROOT)/Debug-iphonesimulator\"",
 					"\"$(SRCROOT)/Libraries/DNAdditions\"",
+					"\"$(SRCROOT)/libDecafNinja/build/Release-iphoneos\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = iYAPC;
@@ -666,6 +650,7 @@
 					/usr/include/libxml2,
 					"\"$(SRCROOT)/Debug-iphonesimulator\"",
 					"\"$(SRCROOT)/Libraries/DNAdditions\"",
+					"\"$(SRCROOT)/libDecafNinja/build/Release-iphoneos\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = iYAPC;
@@ -684,6 +669,7 @@
 					/usr/include/libxml2,
 					"\"$(SRCROOT)/Debug-iphonesimulator\"",
 					"\"$(SRCROOT)/Libraries/DNAdditions\"",
+					"\"$(SRCROOT)/libDecafNinja/build/Release-iphoneos\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = iYAPC;

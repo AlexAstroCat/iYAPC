@@ -178,9 +178,11 @@ typedef enum {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	switch (section) {
+		// Show the session description, if it has summary text
 		case SessionDetailViewControllerSectionDescription:
-			return 1;
-			
+			return [self.sessionObject.summary length] > 0 ? 1 : 0;
+
+		// Show the list of presenters if there are any
 		case SessionDetailViewControllerSectionPresenter:
 			return [self.sessionObject.presenters count];
 			
