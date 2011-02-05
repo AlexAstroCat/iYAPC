@@ -15,7 +15,7 @@
 	
 @private
 	SessionSummaryHeaderView *_summaryHeader;
-	UILabel *_descriptionLabel;
+	//UILabel *_descriptionLabel;
 	
     NSManagedObjectContext *_managedObjectContext;	
 }

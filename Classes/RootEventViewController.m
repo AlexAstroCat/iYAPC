@@ -31,8 +31,14 @@
 	self.navigationItem.title = @"iYAPC";
 	
 	// If only one conference is available, just show them that one conference
-	if ([[self.fetchedResultsController fetchedObjects] count] == 1) {
-		EventModel *theEvent = [[self.fetchedResultsController fetchedObjects] lastObject];
+	NSDate *today = [NSDate date];
+	NSPredicate *futureEventPredicate = [NSPredicate predicateWithFormat:@"days.@max.eventDate >= %@", today];
+	NSArray *futureEvents = [[DNFetchedRequestManager sharedInstance] resultsInContext:self.managedObjectContext
+																		 forEntityName:@"Event"
+																		 withPredicate:futureEventPredicate
+																		usingCacheName:nil];
+	if ([futureEvents count] == 1) {
+		EventModel *theEvent = [futureEvents lastObject];
 		[self navigateToItem:theEvent animated:NO];
 	}
 }

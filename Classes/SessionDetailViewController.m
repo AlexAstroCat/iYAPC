@@ -10,8 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 typedef enum {
-	SessionDetailViewControllerSectionSummary,
 	SessionDetailViewControllerSectionDescription,
+	SessionDetailViewControllerSectionPresenter,
 	SessionDetailViewControllerSectionActions
 } SessionDetailViewControllerSection;
 
@@ -83,18 +83,17 @@ typedef enum {
 	if (!self.view)
 		return;
 
+	// Summary header
 	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
 	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
 	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 	NSString *startTimeStr = [dateFormatter stringFromDate:self.sessionObject.startTime];
-
 	NSString *durationStr = [NSString stringWithFormat:@"%@ minutes", self.sessionObject.duration];
 
 	self.navigationItem.title = self.sessionObject.title;
 	_summaryHeader.titleLabel.text = self.sessionObject.title;
 	_summaryHeader.durationLabel.text = durationStr;
 	_summaryHeader.dateLabel.text = startTimeStr;
-	
 	[_summaryHeader sizeToFit];
 	
 	[self.tableView reloadData];
@@ -102,23 +101,12 @@ typedef enum {
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	switch (indexPath.section) {
-		case SessionDetailViewControllerSectionSummary: {
-			switch (indexPath.row) {
-				case 0:
-					cell.textLabel.text = @"What";
-					cell.detailTextLabel.text = self.sessionObject.title;
-					break;
-				case 1:
-					cell.textLabel.text = @"When";
-					cell.detailTextLabel.text = [self.sessionObject.startTime description];
-					break;
-			}
+		case SessionDetailViewControllerSectionDescription: {
+			cell.textLabel.text = self.sessionObject.summary;
 			break;
 		}
 			
-		case SessionDetailViewControllerSectionDescription: {
-			cell.textLabel.text = self.sessionObject.summary;
-			cell.textLabel.font = [UIFont systemFontOfSize:12.0];
+		case SessionDetailViewControllerSectionPresenter: {
 			break;
 		}
 			
@@ -141,7 +129,7 @@ typedef enum {
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 	UIView *header = nil;
 	switch (section) {
-		case SessionDetailViewControllerSectionSummary: {
+		case SessionDetailViewControllerSectionDescription: {
 			header = _summaryHeader;
 			break;
 		}
@@ -152,20 +140,49 @@ typedef enum {
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
 	switch (section) {
-		case SessionDetailViewControllerSectionSummary:
+		case SessionDetailViewControllerSectionDescription:
 			return _summaryHeader.bounds.size.height;
 	}
 	
 	return 0.0;
 }
 
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	switch (section) {
+		case SessionDetailViewControllerSectionPresenter: {
+			switch ([self.sessionObject.presenters count]) {
+				case 0:
+					return nil;
+				case 1:
+					return @"Presenter";
+				default:
+					return @"Presenters";
+			}
+		}
+	}
+	
+	return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	switch (indexPath.section) {
+		case SessionDetailViewControllerSectionDescription:
+			return [self.sessionObject.summary sizeWithFont:[UIFont systemFontOfSize:14.0]
+										  constrainedToSize:CGSizeMake(self.view.frame.size.width - 20, MAXFLOAT)
+											  lineBreakMode:UILineBreakModeWordWrap].height + 20;
+			
+		default:
+			return 44.0;
+	}
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	switch (section) {
-		case SessionDetailViewControllerSectionSummary:
-			return 2;
-			
 		case SessionDetailViewControllerSectionDescription:
 			return 1;
+			
+		case SessionDetailViewControllerSectionPresenter:
+			return [self.sessionObject.presenters count];
 			
 		case SessionDetailViewControllerSectionActions:
 			return 0;
@@ -181,16 +198,8 @@ typedef enum {
     NSString *cellIdentifier;
 	UITableViewCellStyle cellStyle;
 	switch (indexPath.section) {
-		case SessionDetailViewControllerSectionSummary: {
-			if (indexPath.row == 0) {
-				cellIdentifier = @"DetailSectionIcon";
-				cellStyle = UITableViewCellStyleDefault;
-			} else {
-				cellIdentifier = @"DetailSectionInfo";
-				cellStyle = UITableViewCellStyleValue1;
-			}
+		case SessionDetailViewControllerSectionPresenter:
 			break;
-		}
 			
 		case SessionDetailViewControllerSectionActions: {
 			cellIdentifier = @"DetailSectionAction";
@@ -209,6 +218,12 @@ typedef enum {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:cellStyle reuseIdentifier:cellIdentifier] autorelease];
+		
+		if (indexPath.section == SessionDetailViewControllerSectionDescription) {
+			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+			cell.textLabel.numberOfLines = 0;
+			cell.textLabel.font = [UIFont systemFontOfSize:14.0];
+		}
     }
     
     [self configureCell:cell atIndexPath:indexPath];
@@ -216,6 +231,12 @@ typedef enum {
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.section == SessionDetailViewControllerSectionDescription)
+		return nil;
+	
+	return indexPath;
+}
 
 #pragma mark -
 #pragma mark Table view delegate
