@@ -2,7 +2,7 @@
 //  TrackModel.h
 //  iYAPC
 //
-//  Created by Michael Nachbaur on 11-01-20.
+//  Created by Michael Nachbaur on 11-02-01.
 //  Copyright 2011 Decaf Ninja Software. All rights reserved.
 //
 
@@ -15,10 +15,9 @@
 {
 }
 
-@property (nonatomic, retain) NSNumber * revision;
+@property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSNumber * order;
-@property (nonatomic, retain) NSString * caption;
+@property (nonatomic, retain) NSNumber * track_id;
 @property (nonatomic, retain) EventModel * event;
 @property (nonatomic, retain) NSSet* sessions;
 

@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "SessionModel.h"
+#import "SessionSummaryHeaderView.h"
 
-@interface SessionDetailViewController : UITableViewController {
+@interface SessionDetailViewController : UITableViewController<UITableViewDelegate> {
 	SessionModel *_sessionObject;
 	
 @private
+	SessionSummaryHeaderView *_summaryHeader;
+	UILabel *_descriptionLabel;
+	
     NSManagedObjectContext *_managedObjectContext;	
 }
 

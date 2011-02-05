@@ -7,6 +7,7 @@
 //
 
 #import "SessionDetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 typedef enum {
 	SessionDetailViewControllerSectionSummary,
@@ -47,6 +48,9 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+	_summaryHeader = [[SessionSummaryHeaderView alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width - 20, 30)];
+	
 	[self updateSessionObject];
 }
 
@@ -56,6 +60,10 @@ typedef enum {
 	} else {
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 	}
+}
+
+- (void)viewDidUnload {
+	[super viewDidUnload];
 }
 
 #pragma mark -
@@ -72,18 +80,45 @@ typedef enum {
 #pragma mark Private methods
 
 - (void)updateSessionObject {
+	if (!self.view)
+		return;
+
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+	NSString *startTimeStr = [dateFormatter stringFromDate:self.sessionObject.startTime];
+
+	NSString *durationStr = [NSString stringWithFormat:@"%@ minutes", self.sessionObject.duration];
+
 	self.navigationItem.title = self.sessionObject.title;
-        [self.tableView reloadData];
+	_summaryHeader.titleLabel.text = self.sessionObject.title;
+	_summaryHeader.durationLabel.text = durationStr;
+	_summaryHeader.dateLabel.text = startTimeStr;
+	
+	[_summaryHeader sizeToFit];
+	
+	[self.tableView reloadData];
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	switch (indexPath.section) {
 		case SessionDetailViewControllerSectionSummary: {
+			switch (indexPath.row) {
+				case 0:
+					cell.textLabel.text = @"What";
+					cell.detailTextLabel.text = self.sessionObject.title;
+					break;
+				case 1:
+					cell.textLabel.text = @"When";
+					cell.detailTextLabel.text = [self.sessionObject.startTime description];
+					break;
+			}
 			break;
 		}
 			
 		case SessionDetailViewControllerSectionDescription: {
-			cell.textLabel.text = @"Foo";
+			cell.textLabel.text = self.sessionObject.summary;
+			cell.textLabel.font = [UIFont systemFontOfSize:12.0];
 			break;
 		}
 			
@@ -94,9 +129,6 @@ typedef enum {
 		default:
 			break;
 	}
-//    cell.textLabel.text = session.title;
-//	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", startTimeStr, endTimeStr];
-//	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 
 #pragma mark -
@@ -106,11 +138,31 @@ typedef enum {
     return 3;
 }
 
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	UIView *header = nil;
+	switch (section) {
+		case SessionDetailViewControllerSectionSummary: {
+			header = _summaryHeader;
+			break;
+		}
+	}
+	
+	return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	switch (section) {
+		case SessionDetailViewControllerSectionSummary:
+			return _summaryHeader.bounds.size.height;
+	}
+	
+	return 0.0;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	switch (section) {
 		case SessionDetailViewControllerSectionSummary:
-			return 0;
+			return 2;
 			
 		case SessionDetailViewControllerSectionDescription:
 			return 1;
@@ -122,7 +174,6 @@ typedef enum {
 			return 0;
 	}
 }
-
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

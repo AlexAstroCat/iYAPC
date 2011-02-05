@@ -16,7 +16,7 @@
 @dynamic city;
 @dynamic country;
 @dynamic title;
-@dynamic caption;
+@dynamic summary;
 @dynamic province;
 @dynamic events;
 

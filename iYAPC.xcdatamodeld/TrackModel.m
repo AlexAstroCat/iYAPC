@@ -2,7 +2,7 @@
 //  TrackModel.m
 //  iYAPC
 //
-//  Created by Michael Nachbaur on 11-01-20.
+//  Created by Michael Nachbaur on 11-02-01.
 //  Copyright 2011 Decaf Ninja Software. All rights reserved.
 //
 
@@ -13,10 +13,9 @@
 
 @implementation TrackModel 
 
-@dynamic revision;
+@dynamic summary;
 @dynamic title;
-@dynamic order;
-@dynamic caption;
+@dynamic track_id;
 @dynamic event;
 @dynamic sessions;
 

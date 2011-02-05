@@ -15,6 +15,7 @@
 {
 }
 
+@property (nonatomic, retain) NSNumber * user_id;
 @property (nonatomic, retain) NSSet* attendingSessions;
 
 @end

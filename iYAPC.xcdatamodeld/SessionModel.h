@@ -17,13 +17,15 @@
 {
 }
 
-@property (nonatomic, retain) NSString * caption;
+@property (nonatomic, retain) NSString * url;
+@property (nonatomic, retain) NSString * talk_id;
+@property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * subtitle;
 @property (nonatomic, retain) NSNumber * revision;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * room;
 @property (nonatomic, retain) NSString * startTimeSection;
-@property (nonatomic, retain) NSDate * endTime;
+@property (nonatomic, retain) NSNumber * duration;
 @property (nonatomic, retain) NSDate * startTime;
 @property (nonatomic, retain) NSSet* attendees;
 @property (nonatomic, retain) NSSet* presenters;

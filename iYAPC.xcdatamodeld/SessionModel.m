@@ -15,13 +15,15 @@
 
 @implementation SessionModel 
 
-@dynamic caption;
+@dynamic url;
+@dynamic talk_id;
+@dynamic summary;
 @dynamic subtitle;
 @dynamic revision;
 @dynamic title;
 @dynamic room;
 @dynamic startTimeSection;
-@dynamic endTime;
+@dynamic duration;
 @dynamic startTime;
 @dynamic attendees;
 @dynamic presenters;

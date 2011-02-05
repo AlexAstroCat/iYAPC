@@ -12,6 +12,7 @@
 
 @implementation AttendeeModel 
 
+@dynamic user_id;
 @dynamic attendingSessions;
 
 @end

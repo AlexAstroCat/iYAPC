@@ -17,7 +17,9 @@
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * twitter;
 @property (nonatomic, retain) NSString * website;
-@property (nonatomic, retain) NSString * fullname;
+@property (nonatomic, retain) NSString * firstname;
+@property (nonatomic, retain) NSString * lastname;
+@property (nonatomic, retain) NSString * nickname;
 
 @end
 

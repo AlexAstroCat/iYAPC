@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Data>
-    <Venue>
+	<Venue>
 		<revision>1</revision>
 		<title>Crowne Plaza Asheville</title>
-		<caption>• 34000 square feet of meeting and banquet facilities
+		<summary>• 34000 square feet of meeting and banquet facilities
 • 274 well-appointed guest rooms, including 4 suites and 17 King Executive suites
 • Complimentary parking
 • Complimentary high-speed wireless internet
@@ -13,7 +13,7 @@
 • Tennis and Golf Pro Shop
 • Fitness center with brand new state of the art equipment
 • Concierge and bell services
-• Pet Friendly rooms are available</caption>
+• Pet Friendly rooms are available</summary>
 		<latitude>36.6082</latitude>
 		<longitude>-82.5526</longitude>
 	</Venue>
@@ -46,11 +46,36 @@
 	<Session>
 		<revision>3</revision>
 		<title>Intro to Moose</title>
-		<caption>Moose is a postmodern object system for Perl 5 that takes the tedium out of writing object-oriented Perl. It is a key technology in the Modern Perl toolbox and is used in an ever growing number of CPAN modules and by an ever growing list of companies. 
+		<summary>Moose is a postmodern object system for Perl 5 that takes the tedium out of writing object-oriented Perl. It is a key technology in the Modern Perl toolbox and is used in an ever growing number of CPAN modules and by an ever growing list of companies. 
 
-This talk will introduce you to the central concepts and features of Moose as well as show you where Moose can fit into your personal toolbox.</caption>
+This talk will introduce you to the central concepts and features of Moose as well as show you where Moose can fit into your personal toolbox.</summary>
 		<startTime>2011-06-13T09:00:00</startTime>
-		<endTime>2011-06-13T09:40:00</endTime>
+		<duration>45</duration>
 		<eventDay eventDate="2011-06-13" event.title="YAPC::NA 2011"/>
+		<track track_id="140"/>
 	</Session>
+	<Track>
+		<revision>1</revision>
+		<title>Beginner</title>
+		<track_id>140</track_id>
+		<event title="YAPC::NA 2011"/>
+	</Track>
+	<Track>
+		<revision>1</revision>
+		<title>Lightning 1</title>
+		<track_id>137</track_id>
+		<event title="YAPC::NA 2011"/>
+	</Track>
+	<Track>
+		<revision>1</revision>
+		<title>Lightning 2</title>
+		<track_id>138</track_id>
+		<event title="YAPC::NA 2011"/>
+	</Track>
+	<Track>
+		<revision>1</revision>
+		<title>Lightning 3</title>
+		<track_id>139</track_id>
+		<event title="YAPC::NA 2011"/>
+	</Track>
 </Data>

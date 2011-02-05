@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, retain) NSNumber * order;
-@property (nonatomic, retain) NSString * caption;
+@property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * role;
 @property (nonatomic, retain) NSSet* presentingSessions;
 

@@ -37,6 +37,8 @@
 		1B6E195512C3F75C00C44A42 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6E188612C3D44B00C44A42 /* libxml2.2.dylib */; };
 		1B7999AE12E9E8E5000813BA /* TPFLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B7999AC12E9E8E5000813BA /* TPFLogo.png */; };
 		1B7999AF12E9E8E5000813BA /* TPFLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B7999AD12E9E8E5000813BA /* TPFLogo@2x.png */; };
+		1BB16B9812FA74A400123D6A /* TrackSessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB16B9712FA74A400123D6A /* TrackSessionsViewController.m */; };
+		1BB16C3612FCEAB300123D6A /* SessionSummaryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB16C3512FCEAB300123D6A /* SessionSummaryHeaderView.m */; };
 		1BD985CB12E3A0EA001C2BB0 /* PublicDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */; };
 		1BD988FB12E694E8001C2BB0 /* SessionDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */; };
 		1BD9897A12E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD9897912E6ACFF001C2BB0 /* SessionSummaryTableViewCell.m */; };
@@ -50,6 +52,9 @@
 		1BD98B9012E8A349001C2BB0 /* PresenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8612E8A349001C2BB0 /* PresenterModel.m */; };
 		1BD98B9112E8A349001C2BB0 /* DayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B8812E8A349001C2BB0 /* DayModel.m */; };
 		1BD98B9A12E91D3D001C2BB0 /* SessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98B9912E91D3D001C2BB0 /* SessionModel.m */; };
+		1BFAC46012F8839A00D02141 /* TrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFAC45F12F8839A00D02141 /* TrackModel.m */; };
+		1BFAC46F12FA14DE00D02141 /* TracksListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFAC46E12FA14DE00D02141 /* TracksListViewController.m */; };
+		1BFAC47212FA631900D02141 /* iYFetchedResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFAC47112FA631900D02141 /* iYFetchedResultTableViewController.m */; };
 		1D3623260D0F684500981E51 /* iYAPCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iYAPCAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -121,6 +126,10 @@
 		1B7999AC12E9E8E5000813BA /* TPFLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TPFLogo.png; sourceTree = "<group>"; };
 		1B7999AD12E9E8E5000813BA /* TPFLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TPFLogo@2x.png"; sourceTree = "<group>"; };
 		1B7999CB12E9EEAB000813BA /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		1BB16B9612FA74A400123D6A /* TrackSessionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackSessionsViewController.h; sourceTree = "<group>"; };
+		1BB16B9712FA74A400123D6A /* TrackSessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackSessionsViewController.m; sourceTree = "<group>"; };
+		1BB16C3412FCEAB300123D6A /* SessionSummaryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionSummaryHeaderView.h; sourceTree = "<group>"; };
+		1BB16C3512FCEAB300123D6A /* SessionSummaryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionSummaryHeaderView.m; sourceTree = "<group>"; };
 		1BD985C912E3A0EA001C2BB0 /* PublicDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicDataManager.h; sourceTree = "<group>"; };
 		1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicDataManager.m; sourceTree = "<group>"; };
 		1BD988F912E694E8001C2BB0 /* SessionDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDayViewController.h; sourceTree = "<group>"; };
@@ -146,6 +155,12 @@
 		1BD98B8812E8A349001C2BB0 /* DayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayModel.m; sourceTree = "<group>"; };
 		1BD98B9812E91D3D001C2BB0 /* SessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionModel.h; sourceTree = "<group>"; };
 		1BD98B9912E91D3D001C2BB0 /* SessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionModel.m; sourceTree = "<group>"; };
+		1BFAC45E12F8839A00D02141 /* TrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackModel.h; sourceTree = "<group>"; };
+		1BFAC45F12F8839A00D02141 /* TrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackModel.m; sourceTree = "<group>"; };
+		1BFAC46D12FA14DE00D02141 /* TracksListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TracksListViewController.h; sourceTree = "<group>"; };
+		1BFAC46E12FA14DE00D02141 /* TracksListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TracksListViewController.m; sourceTree = "<group>"; };
+		1BFAC47012FA631900D02141 /* iYFetchedResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iYFetchedResultTableViewController.h; sourceTree = "<group>"; };
+		1BFAC47112FA631900D02141 /* iYFetchedResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iYFetchedResultTableViewController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* iYAPCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iYAPCAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* iYAPCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iYAPCAppDelegate.m; sourceTree = "<group>"; };
@@ -310,6 +325,8 @@
 		1B2D481B12B9CF4200745347 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1BFAC47012FA631900D02141 /* iYFetchedResultTableViewController.h */,
+				1BFAC47112FA631900D02141 /* iYFetchedResultTableViewController.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -338,9 +355,19 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
+		1BB16C3312FCEA7F00123D6A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BB16C3412FCEAB300123D6A /* SessionSummaryHeaderView.h */,
+				1BB16C3512FCEAB300123D6A /* SessionSummaryHeaderView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		1BD988F812E6948E001C2BB0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1BFAC46B12FA14C700D02141 /* Tracks list view controller */,
 				1BD98B4412E89C34001C2BB0 /* Root event view controller */,
 				1BD98B4512E89C4A001C2BB0 /* Main menu view controller */,
 				1BD98B4612E89C5A001C2BB0 /* Session tabs view controller */,
@@ -399,10 +426,22 @@
 		1BD98B4812E89C76001C2BB0 /* Session detail view controller */ = {
 			isa = PBXGroup;
 			children = (
+				1BB16C3312FCEA7F00123D6A /* Views */,
 				1BD98A4912E6C40B001C2BB0 /* SessionDetailViewController.h */,
 				1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */,
 			);
 			name = "Session detail view controller";
+			sourceTree = "<group>";
+		};
+		1BFAC46B12FA14C700D02141 /* Tracks list view controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BFAC46D12FA14DE00D02141 /* TracksListViewController.h */,
+				1BFAC46E12FA14DE00D02141 /* TracksListViewController.m */,
+				1BB16B9612FA74A400123D6A /* TrackSessionsViewController.h */,
+				1BB16B9712FA74A400123D6A /* TrackSessionsViewController.m */,
+			);
+			name = "Tracks list view controller";
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
@@ -563,6 +602,11 @@
 				1BD98B9012E8A349001C2BB0 /* PresenterModel.m in Sources */,
 				1BD98B9112E8A349001C2BB0 /* DayModel.m in Sources */,
 				1BD98B9A12E91D3D001C2BB0 /* SessionModel.m in Sources */,
+				1BFAC46012F8839A00D02141 /* TrackModel.m in Sources */,
+				1BFAC46F12FA14DE00D02141 /* TracksListViewController.m in Sources */,
+				1BFAC47212FA631900D02141 /* iYFetchedResultTableViewController.m in Sources */,
+				1BB16B9812FA74A400123D6A /* TrackSessionsViewController.m in Sources */,
+				1BB16C3612FCEAB300123D6A /* SessionSummaryHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +756,8 @@
 		28D3F201112F7DC200FD0661 /* iYAPC.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1BFAC45E12F8839A00D02141 /* TrackModel.h */,
+				1BFAC45F12F8839A00D02141 /* TrackModel.m */,
 				1BD98B9812E91D3D001C2BB0 /* SessionModel.h */,
 				1BD98B9912E91D3D001C2BB0 /* SessionModel.m */,
 				1BD98B7712E8A349001C2BB0 /* PersonModel.h */,

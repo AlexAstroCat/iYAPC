@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString * city;
 @property (nonatomic, retain) NSString * country;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSString * caption;
+@property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * province;
 @property (nonatomic, retain) NSSet* events;
 

@@ -18,7 +18,7 @@
 @dynamic subtitle;
 @dynamic title;
 @dynamic locationTitle;
-@dynamic caption;
+@dynamic summary;
 @dynamic tracks;
 @dynamic venue;
 @dynamic days;

@@ -14,6 +14,8 @@
 @dynamic email;
 @dynamic twitter;
 @dynamic website;
-@dynamic fullname;
+@dynamic firstname;
+@dynamic lastname;
+@dynamic nickname;
 
 @end

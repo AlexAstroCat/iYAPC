@@ -11,6 +11,7 @@
 
 #import "SessionTabViewController.h"
 #import "SessionDayViewController.h"
+#import "TracksListViewController.h"
 
 #import "DNFetchedRequestManager.h"
 
@@ -51,7 +52,7 @@ typedef enum {
 #pragma mark -
 #pragma mark Actions
 
-- (IBAction)peopleButtonTapped:(id)sender {
+- (IBAction)attendeesButtonTapped:(id)sender {
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not implemented"
 													message:@"This feature isn't finished yet. Sorry!"
 												   delegate:nil
@@ -101,6 +102,14 @@ typedef enum {
 	}
 	
 	[self.navigationController pushViewController:viewcontroller animated:YES];
+}
+
+- (IBAction)tracksButtonTapped:(id)sender {
+	TracksListViewController *controller = [[[TracksListViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+	controller.managedObjectContext = self.managedObjectContext;
+	controller.eventObject = self.eventObject;
+	
+	[self.navigationController pushViewController:controller animated:YES];
 }
 
 - (IBAction)venueButtonTapped:(id)sender {

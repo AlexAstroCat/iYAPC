@@ -21,11 +21,14 @@
 @property (nonatomic, assign) EventModel *eventObject;
 @property (nonatomic, retain) IBOutlet UIImageView *headerImageView;
 
-- (IBAction)peopleButtonTapped:(id)sender;
 - (IBAction)myProfileButtonTapped:(id)sender;
 - (IBAction)myScheduleButtonTapped:(id)sender;
+
 - (IBAction)sessionsButtonTapped:(id)sender;
+- (IBAction)tracksButtonTapped:(id)sender;
 - (IBAction)venueButtonTapped:(id)sender;
+- (IBAction)attendeesButtonTapped:(id)sender;
+
 - (IBAction)sponsorsButtonTapped:(id)sender;
 - (IBAction)infoButtonTapped:(id)sender;
 

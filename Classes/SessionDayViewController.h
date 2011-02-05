@@ -7,18 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iYFetchedResultTableViewController.h"
 #import "DayModel.h"
 
-@interface SessionDayViewController : UITableViewController<NSFetchedResultsControllerDelegate> {
+@interface SessionDayViewController : iYFetchedResultTableViewController {
 	DayModel *_dayObject;
-
-@private
-    NSFetchedResultsController *_fetchedResultsController;
-    NSManagedObjectContext *_managedObjectContext;
 }
 
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, assign) DayModel *dayObject;
+
+- (id)initWithStyle:(UITableViewStyle)style forDay:(DayModel*)day;
 
 @end

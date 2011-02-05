@@ -13,7 +13,7 @@
 @implementation PresenterModel 
 
 @dynamic order;
-@dynamic caption;
+@dynamic summary;
 @dynamic role;
 @dynamic presentingSessions;
 
