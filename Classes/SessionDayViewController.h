@@ -16,6 +16,4 @@
 
 @property (nonatomic, assign) DayModel *dayObject;
 
-- (id)initWithStyle:(UITableViewStyle)style forDay:(DayModel*)day;
-
 @end

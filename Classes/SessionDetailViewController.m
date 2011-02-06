@@ -233,7 +233,7 @@ typedef enum {
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == SessionDetailViewControllerSectionDescription)
 		return nil;
 	

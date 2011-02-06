@@ -38,7 +38,7 @@
 		1B7999AF12E9E8E5000813BA /* TPFLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B7999AD12E9E8E5000813BA /* TPFLogo@2x.png */; };
 		1BB16B9812FA74A400123D6A /* TrackSessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB16B9712FA74A400123D6A /* TrackSessionsViewController.m */; };
 		1BB16C3612FCEAB300123D6A /* SessionSummaryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB16C3512FCEAB300123D6A /* SessionSummaryHeaderView.m */; };
-		1BD67E3B12FDF01300C689AC /* liblibDecafNinja.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD67E3712FDF01300C689AC /* liblibDecafNinja.a */; };
+		1BD67E7D12FE500F00C689AC /* libDecafNinja.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD67E7C12FE500F00C689AC /* libDecafNinja.a */; };
 		1BD985CB12E3A0EA001C2BB0 /* PublicDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */; };
 		1BD988FB12E694E8001C2BB0 /* SessionDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */; };
 		1BD98A4B12E6C40B001C2BB0 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */; };
@@ -125,9 +125,9 @@
 		1BB16B9712FA74A400123D6A /* TrackSessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackSessionsViewController.m; sourceTree = "<group>"; };
 		1BB16C3412FCEAB300123D6A /* SessionSummaryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionSummaryHeaderView.h; sourceTree = "<group>"; };
 		1BB16C3512FCEAB300123D6A /* SessionSummaryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionSummaryHeaderView.m; sourceTree = "<group>"; };
-		1BD67E3712FDF01300C689AC /* liblibDecafNinja.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblibDecafNinja.a; path = "libDecafNinja/build/Release-iphoneos/liblibDecafNinja.a"; sourceTree = SOURCE_ROOT; };
-		1BD67E3912FDF01300C689AC /* DNFetchedRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNFetchedRequestManager.h; sourceTree = "<group>"; };
-		1BD67E3A12FDF01300C689AC /* DNManagedObjectXMLSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNManagedObjectXMLSync.h; sourceTree = "<group>"; };
+		1BD67E7A12FE500F00C689AC /* DNFetchedRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNFetchedRequestManager.h; sourceTree = "<group>"; };
+		1BD67E7B12FE500F00C689AC /* DNManagedObjectXMLSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNManagedObjectXMLSync.h; sourceTree = "<group>"; };
+		1BD67E7C12FE500F00C689AC /* libDecafNinja.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDecafNinja.a; sourceTree = "<group>"; };
 		1BD985C912E3A0EA001C2BB0 /* PublicDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicDataManager.h; sourceTree = "<group>"; };
 		1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicDataManager.m; sourceTree = "<group>"; };
 		1BD988F912E694E8001C2BB0 /* SessionDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDayViewController.h; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 				1B2D471112B977B700745347 /* MobileCoreServices.framework in Frameworks */,
 				1B2D471512B977D100745347 /* libz.1.2.3.dylib in Frameworks */,
 				1B6E195512C3F75C00C44A42 /* libxml2.2.dylib in Frameworks */,
-				1BD67E3B12FDF01300C689AC /* liblibDecafNinja.a in Frameworks */,
+				1BD67E7D12FE500F00C689AC /* libDecafNinja.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,16 +212,6 @@
 				1D6058910D05DD3D006BFB54 /* iYAPC.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		1B180A6B12ED00A000FDA433 /* DNAdditions */ = {
-			isa = PBXGroup;
-			children = (
-				1BD67E3712FDF01300C689AC /* liblibDecafNinja.a */,
-				1BD67E3812FDF01300C689AC /* Headers */,
-			);
-			name = DNAdditions;
-			path = Libraries/DNAdditions;
 			sourceTree = "<group>";
 		};
 		1B2D45DB12B53D1100745347 /* Images */ = {
@@ -251,7 +241,7 @@
 		1B2D46C812B9773900745347 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				1B180A6B12ED00A000FDA433 /* DNAdditions */,
+				1BD67E7812FE500F00C689AC /* libDecafNinja */,
 				1B6E171912BFC51700C44A42 /* Reachability */,
 				1B2D470212B9778700745347 /* asi-http-request */,
 			);
@@ -349,15 +339,24 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		1BD67E3812FDF01300C689AC /* Headers */ = {
+		1BD67E7812FE500F00C689AC /* libDecafNinja */ = {
 			isa = PBXGroup;
 			children = (
-				1BD67E3912FDF01300C689AC /* DNFetchedRequestManager.h */,
-				1BD67E3A12FDF01300C689AC /* DNManagedObjectXMLSync.h */,
+				1BD67E7912FE500F00C689AC /* Headers */,
+				1BD67E7C12FE500F00C689AC /* libDecafNinja.a */,
 			);
-			name = Headers;
-			path = "libDecafNinja/build/Release-iphoneos/Headers";
-			sourceTree = SOURCE_ROOT;
+			name = libDecafNinja;
+			path = Libraries/libDecafNinja;
+			sourceTree = "<group>";
+		};
+		1BD67E7912FE500F00C689AC /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				1BD67E7A12FE500F00C689AC /* DNFetchedRequestManager.h */,
+				1BD67E7B12FE500F00C689AC /* DNManagedObjectXMLSync.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
 		};
 		1BD988F812E6948E001C2BB0 /* View Controllers */ = {
 			isa = PBXGroup;
@@ -612,7 +611,6 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "286D4FBF-1DA7-4AEA-820F-12D9A66AFADD";
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = ../DNAdditions/Headers;
 			};
 			name = Distribution;
 		};
@@ -626,8 +624,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					"\"$(SRCROOT)/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/Libraries/DNAdditions\"",
-					"\"$(SRCROOT)/libDecafNinja/build/Release-iphoneos\"",
+					"\"$(SRCROOT)/Libraries/libDecafNinja\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = iYAPC;
@@ -648,8 +645,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					"\"$(SRCROOT)/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/Libraries/DNAdditions\"",
-					"\"$(SRCROOT)/libDecafNinja/build/Release-iphoneos\"",
+					"\"$(SRCROOT)/Libraries/libDecafNinja\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = iYAPC;
@@ -666,8 +662,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					"\"$(SRCROOT)/Debug-iphonesimulator\"",
-					"\"$(SRCROOT)/Libraries/DNAdditions\"",
-					"\"$(SRCROOT)/libDecafNinja/build/Release-iphoneos\"",
+					"\"$(SRCROOT)/Libraries/libDecafNinja\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = iYAPC;
@@ -688,7 +683,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = ../DNAdditions/Headers;
 			};
 			name = Debug;
 		};
@@ -707,7 +701,6 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "01311B97-0135-4DF3-BB39-CF1963AEE464";
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = ../DNAdditions/Headers;
 			};
 			name = Release;
 		};
