@@ -37,7 +37,6 @@ for config in $CONFIGURATIONS; do
         xcrun -sdk iphoneos PackageApplication -v "$app_path" -o "$OUTPUT/$ipaname" --sign "$codesign" --embed "$cert"
 
 	mkdir $OUTPUT/$fileprefix
-	cp $WORKSPACE/iTunesArtwork $OUTPUT/$fileprefix
 	cp $WORKSPACE/Icon-*.png $OUTPUT/$fileprefix
 
         cat << EOF > $OUTPUT/$otaname
@@ -50,7 +49,7 @@ for config in $CONFIGURATIONS; do
 	<key>display-image</key>
 	<string>$OTAURL/output/$fileprefix/Icon-57.png</string>
 	<key>full-size-image</key>
-	<string>$OTAURL/output/$fileprefix/iTunesArtwork</string>
+	<string>$OTAURL/output/$fileprefix/Icon-512.png</string>
 	<key>bundle-version</key>
 	<string>$version-$BUILD_VERSION</string>
 	<key>title</key>
