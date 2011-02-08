@@ -31,6 +31,7 @@
 		1B2D471112B977B700745347 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2D471012B977B700745347 /* MobileCoreServices.framework */; };
 		1B2D471512B977D100745347 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B2D471412B977D100745347 /* libz.1.2.3.dylib */; };
 		1B2D483712BA703100745347 /* TestEvents.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D483612BA703100745347 /* TestEvents.xml */; };
+		1B3F55FA13007DBC008D97BA /* libDecafNinja.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3F55F913007DBC008D97BA /* libDecafNinja.a */; };
 		1B6E171812BFC51400C44A42 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E171712BFC51400C44A42 /* Reachability.m */; };
 		1B6E186D12C0730D00C44A42 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6E186C12C0730D00C44A42 /* UserManager.m */; };
 		1B6E195512C3F75C00C44A42 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6E188612C3D44B00C44A42 /* libxml2.2.dylib */; };
@@ -38,7 +39,6 @@
 		1B7999AF12E9E8E5000813BA /* TPFLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B7999AD12E9E8E5000813BA /* TPFLogo@2x.png */; };
 		1BB16B9812FA74A400123D6A /* TrackSessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB16B9712FA74A400123D6A /* TrackSessionsViewController.m */; };
 		1BB16C3612FCEAB300123D6A /* SessionSummaryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB16C3512FCEAB300123D6A /* SessionSummaryHeaderView.m */; };
-		1BD67E7D12FE500F00C689AC /* libDecafNinja.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD67E7C12FE500F00C689AC /* libDecafNinja.a */; };
 		1BD985CB12E3A0EA001C2BB0 /* PublicDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */; };
 		1BD988FB12E694E8001C2BB0 /* SessionDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD988FA12E694E8001C2BB0 /* SessionDayViewController.m */; };
 		1BD98A4B12E6C40B001C2BB0 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD98A4A12E6C40B001C2BB0 /* SessionDetailViewController.m */; };
@@ -113,6 +113,9 @@
 		1B2D471412B977D100745347 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		1B2D481F12B9D10400745347 /* iYAPC_Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iYAPC_Constants.h; sourceTree = "<group>"; };
 		1B2D483612BA703100745347 /* TestEvents.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestEvents.xml; sourceTree = "<group>"; };
+		1B3F55F713007DBC008D97BA /* DNFetchedRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNFetchedRequestManager.h; sourceTree = "<group>"; };
+		1B3F55F813007DBC008D97BA /* DNManagedObjectXMLSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNManagedObjectXMLSync.h; sourceTree = "<group>"; };
+		1B3F55F913007DBC008D97BA /* libDecafNinja.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDecafNinja.a; sourceTree = "<group>"; };
 		1B6E171612BFC51400C44A42 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "Libraries/asi-http-request/External/Reachability/Reachability.h"; sourceTree = "<group>"; };
 		1B6E171712BFC51400C44A42 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "Libraries/asi-http-request/External/Reachability/Reachability.m"; sourceTree = "<group>"; };
 		1B6E186B12C0730D00C44A42 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
@@ -125,9 +128,6 @@
 		1BB16B9712FA74A400123D6A /* TrackSessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackSessionsViewController.m; sourceTree = "<group>"; };
 		1BB16C3412FCEAB300123D6A /* SessionSummaryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionSummaryHeaderView.h; sourceTree = "<group>"; };
 		1BB16C3512FCEAB300123D6A /* SessionSummaryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionSummaryHeaderView.m; sourceTree = "<group>"; };
-		1BD67E7A12FE500F00C689AC /* DNFetchedRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNFetchedRequestManager.h; sourceTree = "<group>"; };
-		1BD67E7B12FE500F00C689AC /* DNManagedObjectXMLSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNManagedObjectXMLSync.h; sourceTree = "<group>"; };
-		1BD67E7C12FE500F00C689AC /* libDecafNinja.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDecafNinja.a; sourceTree = "<group>"; };
 		1BD985C912E3A0EA001C2BB0 /* PublicDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicDataManager.h; sourceTree = "<group>"; };
 		1BD985CA12E3A0EA001C2BB0 /* PublicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicDataManager.m; sourceTree = "<group>"; };
 		1BD988F912E694E8001C2BB0 /* SessionDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDayViewController.h; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 				1B2D471112B977B700745347 /* MobileCoreServices.framework in Frameworks */,
 				1B2D471512B977D100745347 /* libz.1.2.3.dylib in Frameworks */,
 				1B6E195512C3F75C00C44A42 /* libxml2.2.dylib in Frameworks */,
-				1BD67E7D12FE500F00C689AC /* libDecafNinja.a in Frameworks */,
+				1B3F55FA13007DBC008D97BA /* libDecafNinja.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +241,7 @@
 		1B2D46C812B9773900745347 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				1BD67E7812FE500F00C689AC /* libDecafNinja */,
+				1B3F55F513007DBC008D97BA /* libDecafNinja */,
 				1B6E171912BFC51700C44A42 /* Reachability */,
 				1B2D470212B9778700745347 /* asi-http-request */,
 			);
@@ -321,6 +321,25 @@
 			name = "Test XML";
 			sourceTree = "<group>";
 		};
+		1B3F55F513007DBC008D97BA /* libDecafNinja */ = {
+			isa = PBXGroup;
+			children = (
+				1B3F55F613007DBC008D97BA /* Headers */,
+				1B3F55F913007DBC008D97BA /* libDecafNinja.a */,
+			);
+			name = libDecafNinja;
+			path = Libraries/libDecafNinja;
+			sourceTree = "<group>";
+		};
+		1B3F55F613007DBC008D97BA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				1B3F55F713007DBC008D97BA /* DNFetchedRequestManager.h */,
+				1B3F55F813007DBC008D97BA /* DNManagedObjectXMLSync.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		1B6E171912BFC51700C44A42 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,25 +356,6 @@
 				1BB16C3512FCEAB300123D6A /* SessionSummaryHeaderView.m */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		1BD67E7812FE500F00C689AC /* libDecafNinja */ = {
-			isa = PBXGroup;
-			children = (
-				1BD67E7912FE500F00C689AC /* Headers */,
-				1BD67E7C12FE500F00C689AC /* libDecafNinja.a */,
-			);
-			name = libDecafNinja;
-			path = Libraries/libDecafNinja;
-			sourceTree = "<group>";
-		};
-		1BD67E7912FE500F00C689AC /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				1BD67E7A12FE500F00C689AC /* DNFetchedRequestManager.h */,
-				1BD67E7B12FE500F00C689AC /* DNManagedObjectXMLSync.h */,
-			);
-			path = Headers;
 			sourceTree = "<group>";
 		};
 		1BD988F812E6948E001C2BB0 /* View Controllers */ = {
@@ -609,8 +609,9 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "286D4FBF-1DA7-4AEA-820F-12D9A66AFADD";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E8026FC4-54B6-4EA7-9BC2-6DB9D3340F72";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "Libraries/libDecafNinja/Headers ../libDecafNinja/Headers";
 			};
 			name = Distribution;
 		};
@@ -624,6 +625,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					"\"$(SRCROOT)/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Libraries/DNAdditions\"",
+					"\"$(SRCROOT)/libDecafNinja/build/Release-iphoneos\"",
 					"\"$(SRCROOT)/Libraries/libDecafNinja\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -645,6 +648,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					"\"$(SRCROOT)/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Libraries/DNAdditions\"",
+					"\"$(SRCROOT)/libDecafNinja/build/Release-iphoneos\"",
 					"\"$(SRCROOT)/Libraries/libDecafNinja\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -662,6 +667,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					"\"$(SRCROOT)/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/Libraries/DNAdditions\"",
+					"\"$(SRCROOT)/libDecafNinja/build/Release-iphoneos\"",
 					"\"$(SRCROOT)/Libraries/libDecafNinja\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -683,6 +690,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "Libraries/libDecafNinja/Headers ../libDecafNinja/Headers";
 			};
 			name = Debug;
 		};
@@ -701,6 +709,7 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "01311B97-0135-4DF3-BB39-CF1963AEE464";
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "Libraries/libDecafNinja/Headers ../libDecafNinja/Headers";
 			};
 			name = Release;
 		};

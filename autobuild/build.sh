@@ -24,20 +24,71 @@ for config in $CONFIGURATIONS; do
     codesign=$(eval echo \$`echo Codesign$config`)
 
     cert="$WORKSPACE/autobuild/$provision"
-    archive="$OUTPUT/$JOB_NAME-$BUILD_NUMBER-$config.zip";
-    ipaname="$OUTPUT/$JOB_NAME-$BUILD_NUMBER-$config.ipa"
-    provname="$OUTPUT/$JOB_NAME-$BUILD_NUMBER-$config.mobileprovision"
+    fileprefix="$JOB_NAME-$BUILD_NUMBER-$config";
+    archive="$fileprefix.zip";
+    ipaname="$fileprefix.ipa"
+    otaname="$fileprefix.plist"
 
     [ -f "$cert" ] && cp "$cert" "$PROFILE_HOME"
     xcodebuild -activetarget -configuration $config build || failed build;
 
     if [ "x$config" = "xDistribution" ]; then
         app_path=$(ls -d build/$config-iphoneos/*.app)
-        xcrun -sdk iphoneos PackageApplication "$app_path" -o "$ipaname" --sign "$codesign" --embed "$cert"
+        xcrun -sdk iphoneos PackageApplication -v "$app_path" -o "$OUTPUT/$ipaname" --sign "$codesign" --embed "$cert"
+
+	mkdir $OUTPUT/$fileprefix
+	cp $WORKSPACE/Icon-*.png $OUTPUT/$fileprefix
+
+        cat << EOF > $OUTPUT/$otaname
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+   <key>items</key>
+   <array>
+       <dict>
+           <key>assets</key>
+           <array>
+               <dict>
+                   <key>kind</key>
+                   <string>software-package</string>
+                   <key>url</key>
+                   <string>$OTAURL/$ipaname</string>
+               </dict>
+               <dict>
+                   <key>kind</key>
+                   <string>display-image</string>
+                   <key>url</key>
+                   <string>$OTAURL/output/$fileprefix/Icon-57.png</string>
+               </dict>
+               <dict>
+                   <key>kind</key>
+                   <string>full-size-image</string>
+                   <key>url</key>
+                   <string>$OTAURL/output/$fileprefix/Icon-512.png</string>
+               </dict>
+           </array>
+           <key>metadata</key>
+           <dict>
+               <key>bundle-identifier</key>
+               <string>com.decafninja.iYAPC</string>
+               <key>bundle-version</key>
+               <string>1.0 #$BUILD_NUMBER</string>
+               <key>kind</key>
+               <string>software</string>
+               <key>subtitle</key>
+               <string>Decaf Ninja Software</string>
+               <key>title</key>
+               <string>iYAPC</string>
+           </dict>
+       </dict>
+   </array>
+</dict>
+</plist>
+EOF
     else
         (
             cd build/$config-iphoneos || failed "no build output";
-            zip -r -T -y "$archive" *.app $provision || failed zip;
+            zip -r -T -y "$OUTPUT/$archive" *.app $provision || failed zip;
         )
     fi
 done

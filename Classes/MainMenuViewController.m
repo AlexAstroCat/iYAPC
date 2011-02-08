@@ -12,6 +12,7 @@
 #import "SessionTabViewController.h"
 #import "SessionDayViewController.h"
 #import "TracksListViewController.h"
+#import "InfoPanelViewController.h"
 
 #import "DNFetchedRequestManager.h"
 
@@ -119,6 +120,9 @@ typedef enum {
 }
 
 - (IBAction)infoButtonTapped:(id)sender {
+	InfoPanelViewController *controller = [[[InfoPanelViewController alloc] initWithNibName:@"InfoPanelViewController" bundle:nil] autorelease];
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self.navigationController presentModalViewController:controller animated:YES];
 }
 
 
