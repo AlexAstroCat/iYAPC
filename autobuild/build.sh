@@ -40,20 +40,48 @@ for config in $CONFIGURATIONS; do
 	cp $WORKSPACE/Icon-*.png $OUTPUT/$fileprefix
 
         cat << EOF > $OUTPUT/$otaname
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>URL</key>
-	<string>$OTAURL/$ipaname</string>
-	<key>display-image</key>
-	<string>$OTAURL/output/$fileprefix/Icon-57.png</string>
-	<key>full-size-image</key>
-	<string>$OTAURL/output/$fileprefix/Icon-512.png</string>
-	<key>bundle-version</key>
-	<string>$version-$BUILD_VERSION</string>
-	<key>title</key>
-	<string>iYAPC</string>
+   <key>items</key>
+   <array>
+       <dict>
+           <key>assets</key>
+           <array>
+               <dict>
+                   <key>kind</key>
+                   <string>software-package</string>
+                   <key>url</key>
+                   <string>$OTAURL/$ipaname</string>
+               </dict>
+               <dict>
+                   <key>kind</key>
+                   <string>display-image</string>
+                   <key>url</key>
+                   <string>$OTAURL/output/$fileprefix/Icon-57.png</string>
+               </dict>
+               <dict>
+                   <key>kind</key>
+                   <string>full-size-image</string>
+                   <key>url</key>
+                   <string>$OTAURL/output/$fileprefix/Icon-512.png</string>
+               </dict>
+           </array>
+           <key>metadata</key>
+           <dict>
+               <key>bundle-identifier</key>
+               <string>com.decafninja.iYAPC</string>
+               <key>bundle-version</key>
+               <string>1.0 #$BUILD_NUMBER</string>
+               <key>kind</key>
+               <string>software</string>
+               <key>subtitle</key>
+               <string>Decaf Ninja Software</string>
+               <key>title</key>
+               <string>iYAPC</string>
+           </dict>
+       </dict>
+   </array>
 </dict>
 </plist>
 EOF
