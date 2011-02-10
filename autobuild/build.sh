@@ -34,7 +34,7 @@ for config in $CONFIGURATIONS; do
 
     if [ "x$config" = "xDistribution" ]; then
         app_path=$(ls -d build/$config-iphoneos/*.app)
-        xcrun -sdk iphoneos PackageApplication -v "$app_path" -o "$OUTPUT/$ipaname" --sign "$codesign" --embed "$cert"
+        xcrun -sdk iphoneos PackageApplication "$app_path" -o "$OUTPUT/$ipaname" --sign "$codesign" --embed "$cert"
 
 	mkdir $OUTPUT/$fileprefix
 	cp $WORKSPACE/$OTASmallIcon $OUTPUT/$fileprefix/Icon-57.png
