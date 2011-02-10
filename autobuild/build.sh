@@ -37,7 +37,12 @@ for config in $CONFIGURATIONS; do
         xcrun -sdk iphoneos PackageApplication -v "$app_path" -o "$OUTPUT/$ipaname" --sign "$codesign" --embed "$cert"
 
 	mkdir $OUTPUT/$fileprefix
-	cp $WORKSPACE/Icon-*.png $OUTPUT/$fileprefix
+	cp $WORKSPACE/$OTASmallIcon $OUTPUT/$fileprefix/Icon-57.png
+	cp $WORKSPACE/$OTALargeIcon $OUTPUT/$fileprefix/Icon-512.png
+        
+        info_plist=$(ls *Info.plist | sed -e 's/\.plist//')
+        bundle_version=$(defaults read $WORKSPACE/$info_plist CFBundleShortVersionString)
+        bundle_id=$(defaults read $WORKSPACE/$info_plist CFBundleIdentifier)
 
         cat << EOF > $OUTPUT/$otaname
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -57,12 +62,16 @@ for config in $CONFIGURATIONS; do
                <dict>
                    <key>kind</key>
                    <string>display-image</string>
+                   <key>needs-shine</key>
+                   <true/>
                    <key>url</key>
                    <string>$OTAURL/output/$fileprefix/Icon-57.png</string>
                </dict>
                <dict>
                    <key>kind</key>
                    <string>full-size-image</string>
+                   <key>needs-shine</key>
+                   <true/>
                    <key>url</key>
                    <string>$OTAURL/output/$fileprefix/Icon-512.png</string>
                </dict>
@@ -70,15 +79,15 @@ for config in $CONFIGURATIONS; do
            <key>metadata</key>
            <dict>
                <key>bundle-identifier</key>
-               <string>com.decafninja.iYAPC</string>
+               <string>$bundle_id</string>
                <key>bundle-version</key>
-               <string>1.0 #$BUILD_NUMBER</string>
+               <string>$bundle_version #$BUILD_NUMBER</string>
                <key>kind</key>
                <string>software</string>
-               <key>subtitle</key>
-               <string>Decaf Ninja Software</string>
                <key>title</key>
-               <string>iYAPC</string>
+               <string>$OTATitle</string>
+               <key>subtitle</key>
+               <string>$OTASubtitle</string>
            </dict>
        </dict>
    </array>
