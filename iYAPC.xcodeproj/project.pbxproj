@@ -716,7 +716,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E8026FC4-54B6-4EA7-9BC2-6DB9D3340F72";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0569C10B-7080-4CC5-BA22-BA10773AABDE";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "Libraries/libDecafNinja/Headers ../libDecafNinja/Headers";
 			};
