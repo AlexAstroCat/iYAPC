@@ -33,6 +33,7 @@
 		1B2D483712BA703100745347 /* TestEvents.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D483612BA703100745347 /* TestEvents.xml */; };
 		1B3F55FA13007DBC008D97BA /* libDecafNinja.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3F55F913007DBC008D97BA /* libDecafNinja.a */; };
 		1B552F8E1304FA69009D5597 /* InfoPanelAppObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B552F8D1304FA69009D5597 /* InfoPanelAppObject.m */; };
+		1B552FFE130509EC009D5597 /* SponsorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B552FFD130509EC009D5597 /* SponsorModel.m */; };
 		1B67ACCF1301A37D0071AB25 /* InfoPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B67ACCC1301A37D0071AB25 /* InfoPanelViewController.xib */; };
 		1B67ACD01301A37D0071AB25 /* InfoPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B67ACCE1301A37D0071AB25 /* InfoPanelViewController.m */; };
 		1B67AD4C1303B5680071AB25 /* Icon-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B67AD461303B5680071AB25 /* Icon-512.png */; };
@@ -132,6 +133,8 @@
 		1B3F55F913007DBC008D97BA /* libDecafNinja.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDecafNinja.a; sourceTree = "<group>"; };
 		1B552F8C1304FA69009D5597 /* InfoPanelAppObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPanelAppObject.h; sourceTree = "<group>"; };
 		1B552F8D1304FA69009D5597 /* InfoPanelAppObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPanelAppObject.m; sourceTree = "<group>"; };
+		1B552FFC130509EC009D5597 /* SponsorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SponsorModel.h; sourceTree = "<group>"; };
+		1B552FFD130509EC009D5597 /* SponsorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SponsorModel.m; sourceTree = "<group>"; };
 		1B67ACCC1301A37D0071AB25 /* InfoPanelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoPanelViewController.xib; sourceTree = "<group>"; };
 		1B67ACCD1301A37D0071AB25 /* InfoPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoPanelViewController.h; sourceTree = "<group>"; };
 		1B67ACCE1301A37D0071AB25 /* InfoPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoPanelViewController.m; sourceTree = "<group>"; };
@@ -692,6 +695,7 @@
 				1B67ACD01301A37D0071AB25 /* InfoPanelViewController.m in Sources */,
 				1B67ADE31304E4790071AB25 /* WebViewController.m in Sources */,
 				1B552F8E1304FA69009D5597 /* InfoPanelAppObject.m in Sources */,
+				1B552FFE130509EC009D5597 /* SponsorModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +849,8 @@
 		28D3F201112F7DC200FD0661 /* iYAPC.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				1B552FFC130509EC009D5597 /* SponsorModel.h */,
+				1B552FFD130509EC009D5597 /* SponsorModel.m */,
 				1BFAC45E12F8839A00D02141 /* TrackModel.h */,
 				1BFAC45F12F8839A00D02141 /* TrackModel.m */,
 				1BD98B9812E91D3D001C2BB0 /* SessionModel.h */,

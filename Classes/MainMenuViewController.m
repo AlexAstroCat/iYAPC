@@ -31,6 +31,7 @@ typedef enum {
 	self.navigationItem.title = self.eventObject.title;
 	[self.headerImageView setImage:self.eventObject.headerImage];
 	
+	// Update view layers to make it mo-bettah
 	for (UIView *subview in self.view.subviews) {
 		switch (subview.tag) {
 			case MainMenuViewControllerViewTagRoundedBox:
@@ -42,10 +43,19 @@ typedef enum {
 				break;
 		}
 	}
+	
+	// Conditionally show buttons on this view
+	if ([self.eventObject.sponsors count] == 0) {
+		[_sponsorsButton removeFromSuperview];
+		[_sponsorsButton release];
+		_sponsorsButton = nil;
+	}
 }
 
 - (void)dealloc {
 	self.managedObjectContext = nil;
+	if (_sponsorsButton)
+		[_sponsorsButton release];
 
     [super dealloc];
 }

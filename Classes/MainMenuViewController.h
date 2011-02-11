@@ -12,6 +12,7 @@
 @interface MainMenuViewController : UIViewController {
 	EventModel *_eventObject;
 	UIImageView *_headerImageView;
+	IBOutlet UIButton *_sponsorsButton;
 
 @private
     NSManagedObjectContext *_managedObjectContext;

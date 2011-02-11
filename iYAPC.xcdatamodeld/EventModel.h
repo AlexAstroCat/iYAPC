@@ -11,6 +11,7 @@
 @class DayModel;
 @class TrackModel;
 @class VenueModel;
+@class SponsorModel;
 
 @interface EventModel :  NSManagedObject  
 {
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) NSSet* tracks;
 @property (nonatomic, retain) VenueModel * venue;
 @property (nonatomic, retain) NSSet* days;
+@property (nonatomic, retain) NSSet* sponsors;
 
 @property (nonatomic, retain) NSString * headerImageUrl;
 @property (nonatomic, retain) UIImage * headerImage;
@@ -41,6 +43,11 @@
 - (void)removeDaysObject:(DayModel *)value;
 - (void)addDays:(NSSet *)value;
 - (void)removeDays:(NSSet *)value;
+
+- (void)addSponsorsObject:(SponsorModel *)value;
+- (void)removeSponsorsObject:(SponsorModel *)value;
+- (void)addSponsors:(NSSet *)value;
+- (void)removeSponsors:(NSSet *)value;
 
 @end
 

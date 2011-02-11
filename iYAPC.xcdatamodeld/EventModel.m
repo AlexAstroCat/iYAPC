@@ -11,6 +11,7 @@
 #import "DayModel.h"
 #import "TrackModel.h"
 #import "VenueModel.h"
+#import "SponsorModel.h"
 
 @implementation EventModel 
 
@@ -22,6 +23,7 @@
 @dynamic tracks;
 @dynamic venue;
 @dynamic days;
+@dynamic sponsors;
 
 @dynamic headerImageUrl;
 @dynamic headerImage;
