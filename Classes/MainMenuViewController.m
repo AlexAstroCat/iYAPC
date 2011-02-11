@@ -114,9 +114,23 @@ typedef enum {
 }
 
 - (IBAction)venueButtonTapped:(id)sender {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not implemented"
+													message:@"This feature isn't finished yet. Sorry!"
+												   delegate:nil
+										  cancelButtonTitle:@"OK"
+										  otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 - (IBAction)sponsorsButtonTapped:(id)sender {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not implemented"
+													message:@"This feature isn't finished yet. Sorry!"
+												   delegate:nil
+										  cancelButtonTitle:@"OK"
+										  otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 - (IBAction)infoButtonTapped:(id)sender {
