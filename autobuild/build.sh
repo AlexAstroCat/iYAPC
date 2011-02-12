@@ -32,10 +32,10 @@ for config in $CONFIGURATIONS; do
     [ -f "$cert" ] && cp "$cert" "$PROFILE_HOME"
     xcodebuild -activetarget -configuration $config build || failed build;
 
-    if [ "x$config" = "xDistribution" ]; then
-        app_path=$(ls -d build/$config-iphoneos/*.app)
-        xcrun -sdk iphoneos PackageApplication "$app_path" -o "$OUTPUT/$ipaname" --sign "$codesign" --embed "$cert"
+    app_path=$(ls -d build/$config-iphoneos/*.app)
+    xcrun -sdk iphoneos PackageApplication "$app_path" -o "$OUTPUT/$ipaname" --sign "$codesign" --embed "$cert"
 
+    if [ "x$config" != "xRelease" ]; then
 	mkdir $OUTPUT/$fileprefix
 	cp $WORKSPACE/$OTASmallIcon $OUTPUT/$fileprefix/Icon-57.png
 	cp $WORKSPACE/$OTALargeIcon $OUTPUT/$fileprefix/Icon-512.png
@@ -94,10 +94,5 @@ for config in $CONFIGURATIONS; do
 </dict>
 </plist>
 EOF
-    else
-        (
-            cd build/$config-iphoneos || failed "no build output";
-            zip -r -T -y "$OUTPUT/$archive" *.app $provision || failed zip;
-        )
     fi
 done
