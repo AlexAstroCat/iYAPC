@@ -205,6 +205,7 @@ typedef enum {
 			switch (indexPath.row) {
 				case 0:
 					cell.textLabel.text = NSLocalizedString(@"iYAPC is a conference assistance tool to help the Perl Community and its attendees manage their schedules, discover conferences, and interact with other developers at Perl-related conferences and workshops.  It was written by Decaf Ninja Software and released to the community as Open Source Software.", nil);
+					cell.selectionStyle = UITableViewCellSelectionStyleNone;
 					break;
 
 				case 1: {

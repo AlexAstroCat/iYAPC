@@ -25,6 +25,7 @@
 @dynamic startTimeSection;
 @dynamic duration;
 @dynamic startTime;
+@dynamic endTime;
 @dynamic attendees;
 @dynamic presenters;
 @dynamic track;
@@ -37,6 +38,10 @@
 	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 	
 	return [dateFormatter stringFromDate:self.startTime];
+}
+
+- (NSDate*)endTime {
+	return [self.startTime dateByAddingTimeInterval:[self.duration floatValue] * 60.0];
 }
 
 @end

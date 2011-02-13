@@ -17,9 +17,15 @@
 
 @implementation WebViewController
 @synthesize webView = _webView;
+@synthesize url = _url;
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
+}
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	[self.webView loadRequest:[NSURLRequest requestWithURL:self.url]];
 }
 
 - (void)viewDidUnload {

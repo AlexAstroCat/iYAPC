@@ -27,6 +27,7 @@
 @property (nonatomic, retain) NSString * startTimeSection;
 @property (nonatomic, retain) NSNumber * duration;
 @property (nonatomic, retain) NSDate * startTime;
+@property (nonatomic, retain) NSDate * endTime;
 @property (nonatomic, retain) NSSet* attendees;
 @property (nonatomic, retain) NSSet* presenters;
 @property (nonatomic, retain) TrackModel * track;

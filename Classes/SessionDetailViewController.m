@@ -8,6 +8,7 @@
 
 #import "SessionDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "WebViewController.h"
 
 typedef enum {
 	SessionDetailViewControllerSectionDescription,
@@ -89,8 +90,9 @@ typedef enum {
 	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
 	[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
 	[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+
 	NSString *startTimeStr = [dateFormatter stringFromDate:self.sessionObject.startTime];
-	NSString *durationStr = [NSString stringWithFormat:@"%@ minutes", self.sessionObject.duration];
+	NSString *durationStr = [NSString stringWithFormat:NSLocalizedString(@"%@ minutes", nil), self.sessionObject.duration];
 
 	self.navigationItem.title = self.sessionObject.title;
 	_summaryHeader.titleLabel.text = self.sessionObject.title;
@@ -105,15 +107,57 @@ typedef enum {
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 	switch (indexPath.section) {
 		case SessionDetailViewControllerSectionDescription: {
-			cell.textLabel.text = self.sessionObject.summary;
+			switch (indexPath.row) {
+				case 0:
+					cell.textLabel.text = self.sessionObject.summary;
+					cell.selectionStyle = UITableViewCellSelectionStyleNone;
+					break;
+
+				case 1:
+					cell.textLabel.text = NSLocalizedString(@"More information", nil);
+					cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+					
+				default:
+					break;
+			}
 			break;
 		}
 			
 		case SessionDetailViewControllerSectionPresenter: {
 			break;
 		}
-			/*
+
 		case SessionDetailViewControllerSectionInfo: {
+			NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+			[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+			[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+
+			switch (indexPath.row) {
+				case 0:
+					cell.textLabel.text = NSLocalizedString(@"Begins", nil);
+					cell.detailTextLabel.text = [dateFormatter stringFromDate:self.sessionObject.startTime];
+					cell.selectionStyle = UITableViewCellSelectionStyleNone;
+					break;
+					
+				case 1:
+					cell.textLabel.text = NSLocalizedString(@"Ends", nil);
+					cell.detailTextLabel.text = [dateFormatter stringFromDate:self.sessionObject.endTime];
+					cell.selectionStyle = UITableViewCellSelectionStyleNone;
+					break;
+					
+				case 2:
+					cell.textLabel.text = NSLocalizedString(@"Room", nil);
+					cell.detailTextLabel.text = self.sessionObject.room;
+					cell.selectionStyle = UITableViewCellSelectionStyleNone;
+					break;
+					
+				default:
+					break;
+			}
+			break;
+		}
+
+		case SessionDetailViewControllerSectionActions: {
 			switch (indexPath.row) {
 				case 0:
 					
@@ -123,12 +167,8 @@ typedef enum {
 					break;
 			}
 			break;
-		}*/
-			
-		case SessionDetailViewControllerSectionActions: {
-			break;
 		}
-
+			
 		default:
 			break;
 	}
@@ -157,8 +197,16 @@ typedef enum {
 	switch (section) {
 		case SessionDetailViewControllerSectionDescription:
 			return _summaryHeader.bounds.size.height;
+		
+		case SessionDetailViewControllerSectionPresenter:
+			return [self.sessionObject.presenters count] > 0 ? 14.0 : 0.0;
+			
+		default:
+			return 0.0;
 	}
-	
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
 	return 0.0;
 }
 
@@ -169,9 +217,9 @@ typedef enum {
 				case 0:
 					return nil;
 				case 1:
-					return @"Presenter";
+					return NSLocalizedString(@"Presenter", nil);
 				default:
-					return @"Presenters";
+					return NSLocalizedString(@"Presenters", nil);
 			}
 		}
 	}
@@ -185,27 +233,41 @@ typedef enum {
 			return [self.sessionObject.summary sizeWithFont:[UIFont systemFontOfSize:14.0]
 										  constrainedToSize:CGSizeMake(self.view.frame.size.width - 20, MAXFLOAT)
 											  lineBreakMode:UILineBreakModeWordWrap].height + 20;
-			
+		
 		default:
 			return 44.0;
 	}
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	int rowCount = 0;
+
 	switch (section) {
 		// Show the session description, if it has summary text
-		case SessionDetailViewControllerSectionDescription:
-			return [self.sessionObject.summary length] > 0 ? 1 : 0;
+		case SessionDetailViewControllerSectionDescription: {
+			if ([self.sessionObject.summary length] > 0)
+				rowCount++;
+			if ([self.sessionObject.url length] > 0)
+				rowCount++;
+			
+			return rowCount;
+		}
 
 		// Show the list of presenters if there are any
 		case SessionDetailViewControllerSectionPresenter:
 			return [self.sessionObject.presenters count];
 			
-		case SessionDetailViewControllerSectionActions:
-			return 0;
+		case SessionDetailViewControllerSectionInfo: {
+			rowCount = 2;
+			if ([self.sessionObject.room length] > 0)
+				rowCount++;
 			
+			return rowCount;
+		}
+			
+		case SessionDetailViewControllerSectionActions:
 		default:
-			return 0;
+			return rowCount;
 	}
 }
 
@@ -217,6 +279,12 @@ typedef enum {
 	switch (indexPath.section) {
 		case SessionDetailViewControllerSectionPresenter:
 			break;
+			
+		case SessionDetailViewControllerSectionInfo: {
+			cellIdentifier = @"DetailSectionInfo";
+			cellStyle = UITableViewCellStyleValue1;
+			break;
+		}
 			
 		case SessionDetailViewControllerSectionActions: {
 			cellIdentifier = @"DetailSectionAction";
@@ -249,7 +317,7 @@ typedef enum {
 }
 
 - (NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == SessionDetailViewControllerSectionDescription)
+	if (indexPath.section == SessionDetailViewControllerSectionDescription && indexPath.row == 0)
 		return nil;
 	
 	return indexPath;
@@ -259,14 +327,18 @@ typedef enum {
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-	 [self.navigationController pushViewController:detailViewController animated:YES];
-	 [detailViewController release];
-	 */
+	switch (indexPath.section) {
+		case SessionDetailViewControllerSectionDescription:
+			if (indexPath.row == 1) {
+				WebViewController *controller = [[[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil] autorelease];
+				controller.url = [NSURL URLWithString:self.sessionObject.url];
+				[self.navigationController pushViewController:controller animated:YES];
+			}
+			break;
+			
+		default:
+			break;
+	}
 }
 
 

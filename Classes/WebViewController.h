@@ -15,9 +15,11 @@
 	IBOutlet UIBarButtonItem *_backItem;
 	IBOutlet UIBarButtonItem *_forwardItem;
 	IBOutlet UIBarButtonItem *_reloadItem;
+	NSURL *_url;
 }
 
 @property (nonatomic, retain) IBOutlet UIWebView *webView;
+@property (nonatomic, copy) NSURL *url;
 
 - (IBAction)close:(id)sender;
 - (IBAction)goBack:(id)sender;
