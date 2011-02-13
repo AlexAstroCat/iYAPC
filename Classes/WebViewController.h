@@ -27,4 +27,6 @@
 - (IBAction)reload:(id)sender;
 - (IBAction)openAction:(id)sender;
 
++ (WebViewController*)webViewControllerAtURL:(NSURL*)url;
+
 @end

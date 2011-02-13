@@ -8,6 +8,7 @@
 
 #import "InfoPanelViewController.h"
 #import "InfoPanelAppObject.h"
+#import "WebViewController.h"
 
 typedef enum {
 	InfoPanelViewControllerSectionOverview,
@@ -98,6 +99,7 @@ typedef enum {
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellIdentifier;
 	UITableViewCellStyle cellStyle;
+	
 	switch (indexPath.section) {
 		case InfoPanelViewControllerSectionOverview: {
 			cellIdentifier = @"InfoOverviewSection";
@@ -142,38 +144,28 @@ typedef enum {
 #pragma mark -
 #pragma mark UITableViewDelegate methods
 
-- (NSIndexPath*)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	switch (indexPath.section) {
 		case InfoPanelViewControllerSectionOverview: {
 			if (indexPath.row == 1) {
 				NSURL *url = [NSURL URLWithString:@"http://github.com/NachoMan/iYAPC"];
 				[[UIApplication sharedApplication] openURL:url];
-				return nil;
 			}
+			break;
 		}
 			
 		case InfoPanelViewControllerSectionOtherApps: {
 			InfoPanelAppObject *app = [_appsList objectAtIndex:indexPath.row];
 			NSURL *url = [NSURL URLWithString:app.url];
 			[[UIApplication sharedApplication] openURL:url];
-			return nil;
+			break;
 		}
-
+			
 		default:
 			break;
 	}
-
-	return indexPath;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	switch (indexPath.section) {
-		case InfoPanelViewControllerSectionOverview:
-			break;
-		
-		default:
-			break;
-	}
+	
+	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

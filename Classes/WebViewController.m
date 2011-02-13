@@ -19,6 +19,18 @@
 @synthesize webView = _webView;
 @synthesize url = _url;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	if (!nibNameOrNil)
+		nibNameOrNil = @"WebViewController";
+	return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+}
+
++ (WebViewController*)webViewControllerAtURL:(NSURL*)url {
+	WebViewController *controller = [[[self alloc] initWithNibName:nil bundle:nil] autorelease];
+	controller.url = url;
+	return controller;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
 }

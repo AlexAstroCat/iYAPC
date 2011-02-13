@@ -330,9 +330,8 @@ typedef enum {
 	switch (indexPath.section) {
 		case SessionDetailViewControllerSectionDescription:
 			if (indexPath.row == 1) {
-				WebViewController *controller = [[[WebViewController alloc] initWithNibName:@"WebViewController" bundle:nil] autorelease];
-				controller.url = [NSURL URLWithString:self.sessionObject.url];
-				[self.navigationController pushViewController:controller animated:YES];
+				NSURL *url = [NSURL URLWithString:self.sessionObject.url];
+				[self.navigationController pushViewController:[WebViewController webViewControllerAtURL:url] animated:YES];
 			}
 			break;
 			
