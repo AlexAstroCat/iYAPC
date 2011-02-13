@@ -12,7 +12,9 @@
 typedef enum {
 	SessionDetailViewControllerSectionDescription,
 	SessionDetailViewControllerSectionPresenter,
-	SessionDetailViewControllerSectionActions
+	SessionDetailViewControllerSectionInfo,
+	SessionDetailViewControllerSectionActions,
+	CountSessionDetailViewControllerSections
 } SessionDetailViewControllerSection;
 
 @interface SessionDetailViewController (Private)
@@ -92,6 +94,7 @@ typedef enum {
 
 	self.navigationItem.title = self.sessionObject.title;
 	_summaryHeader.titleLabel.text = self.sessionObject.title;
+	_summaryHeader.subtitleLabel.text = self.sessionObject.subtitle;
 	_summaryHeader.durationLabel.text = durationStr;
 	_summaryHeader.dateLabel.text = startTimeStr;
 	[_summaryHeader sizeToFit];
@@ -109,6 +112,18 @@ typedef enum {
 		case SessionDetailViewControllerSectionPresenter: {
 			break;
 		}
+			/*
+		case SessionDetailViewControllerSectionInfo: {
+			switch (indexPath.row) {
+				case 0:
+					
+					break;
+					
+				default:
+					break;
+			}
+			break;
+		}*/
 			
 		case SessionDetailViewControllerSectionActions: {
 			break;
@@ -123,7 +138,7 @@ typedef enum {
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return CountSessionDetailViewControllerSections;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

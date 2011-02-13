@@ -248,6 +248,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1B1FD998130717AA00561FAA /* Venue view controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Venue view controller";
+			sourceTree = "<group>";
+		};
 		1B2D45DB12B53D1100745347 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +466,7 @@
 				1BD98B4612E89C5A001C2BB0 /* Session tabs view controller */,
 				1BD98B4712E89C67001C2BB0 /* Session day view controller */,
 				1BD98B4812E89C76001C2BB0 /* Session detail view controller */,
+				1B1FD998130717AA00561FAA /* Venue view controller */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

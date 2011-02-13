@@ -11,11 +11,13 @@
 
 @interface SessionSummaryHeaderView : UIView {
 	UILabel *_titleLabel;
+	UILabel *_subtitleLabel;
 	UILabel *_dateLabel;
 	UILabel *_durationLabel;
 }
 
 @property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, readonly) UILabel *subtitleLabel;
 @property (nonatomic, readonly) UILabel *dateLabel;
 @property (nonatomic, readonly) UILabel *durationLabel;
 
