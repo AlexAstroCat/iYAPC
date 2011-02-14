@@ -12,6 +12,7 @@
 
 typedef enum {
 	VenueDetailViewControllerSectionLocation,
+	VenueDetailViewControllerSectionDescription,
 	CountVenueDetailViewControllerSections
 } VenueDetailViewControllerSection;
 
@@ -47,6 +48,7 @@ typedef enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	self.navigationItem.title = NSLocalizedString(@"Venue", nil);
 	[self updateVenueObject];
 }
 
@@ -83,6 +85,7 @@ typedef enum {
 	if ([self.venueObject.longitude floatValue] != 0 && [self.venueObject.latitude floatValue] != 0) {
 		CGFloat radius = 10;
 		CGRect mapRect = CGRectMake(0, 0, 300, 119.0);
+		[_mapView release];
 		_mapView = [[MKMapView alloc] initWithFrame:mapRect];
 		_mapView.userInteractionEnabled = NO;
 		_mapView.delegate = self;
@@ -116,7 +119,6 @@ typedef enum {
 		}
 	}
 		
-	self.navigationItem.title = self.venueObject.title;
 	[self.tableView reloadData];
 }
 
@@ -144,6 +146,12 @@ typedef enum {
 					break;
 			}
 			break;
+			
+		case VenueDetailViewControllerSectionDescription:
+			cell.textLabel.text = self.venueObject.summary;
+			cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			break;
+
 
 		default:
 			break;
@@ -164,16 +172,23 @@ typedef enum {
 		case VenueDetailViewControllerSectionLocation: {
 			if (!_mapView)
 				row++;
-
+			
 			switch (row) {
 				case 0:
 					return 120;
-
+					
 				case 1:
 					return [self.venueObject.address sizeWithFont:[UIFont systemFontOfSize:14.0]
 												constrainedToSize:CGSizeMake(self.view.frame.size.width - 20, MAXFLOAT)
 													lineBreakMode:UILineBreakModeWordWrap].height + 20;
-			}			
+			}
+			break;
+		}
+			
+		case VenueDetailViewControllerSectionDescription: {
+			return [self.venueObject.summary sizeWithFont:[UIFont systemFontOfSize:14.0]
+										constrainedToSize:CGSizeMake(self.view.frame.size.width - 20, MAXFLOAT)
+											lineBreakMode:UILineBreakModeWordWrap].height + 20;
 		}
 	}
 	
@@ -184,6 +199,9 @@ typedef enum {
 	switch (section) {
 		case VenueDetailViewControllerSectionLocation:
 			return self.venueObject.title;
+			
+		case VenueDetailViewControllerSectionDescription:
+			return NSLocalizedString(@"Venue description", nil);
 		
 		default:
 			return nil;
@@ -202,6 +220,9 @@ typedef enum {
 			return rowCount;
 		}
 			
+		case VenueDetailViewControllerSectionDescription:
+			return 1;
+
 		default:
 			return rowCount;
 	}
@@ -218,6 +239,7 @@ typedef enum {
 			cellStyle = UITableViewCellStyleValue2;
 			break;
 			
+		case VenueDetailViewControllerSectionDescription:
 		default:
 			cellIdentifier = @"DetailVenueDescription";
 			cellStyle = UITableViewCellStyleDefault;
@@ -232,6 +254,12 @@ typedef enum {
 			cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
 			cell.detailTextLabel.numberOfLines = 0;
 			cell.detailTextLabel.font = [UIFont systemFontOfSize:14.0];
+		}
+
+		if (indexPath.section == VenueDetailViewControllerSectionDescription) {
+			cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+			cell.textLabel.numberOfLines = 0;
+			cell.textLabel.font = [UIFont systemFontOfSize:14.0];
 		}
     }
     
