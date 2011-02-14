@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1FDA4C13084BD700561FAA /* VenueDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1FDA4B13084BD700561FAA /* VenueDetailViewController.m */; };
+		1B1FDA5C13084E3F00561FAA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1FDA5B13084E3F00561FAA /* MapKit.framework */; };
+		1B1FDAA51308667500561FAA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1FDAA41308667500561FAA /* CoreLocation.framework */; };
+		1B1FDB631308B32A00561FAA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1FDB621308B32A00561FAA /* QuartzCore.framework */; };
+		1B1FDBA51308B7EB00561FAA /* VenueMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1FDBA41308B7EB00561FAA /* VenueMapAnnotation.m */; };
 		1B2D45BE12B4819900745347 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2D45BC12B4819900745347 /* MainMenuViewController.m */; };
 		1B2D45BF12B4819900745347 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D45BD12B4819900745347 /* MainMenuViewController.xib */; };
 		1B2D45DE12B53D1100745347 /* iYAPCBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B2D45DC12B53D1100745347 /* iYAPCBackground.png */; };
@@ -81,6 +86,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B1FDA4A13084BD700561FAA /* VenueDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueDetailViewController.h; sourceTree = "<group>"; };
+		1B1FDA4B13084BD700561FAA /* VenueDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueDetailViewController.m; sourceTree = "<group>"; };
+		1B1FDA5B13084E3F00561FAA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1B1FDAA41308667500561FAA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1B1FDB621308B32A00561FAA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1B1FDBA31308B7EB00561FAA /* VenueMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueMapAnnotation.h; sourceTree = "<group>"; };
+		1B1FDBA41308B7EB00561FAA /* VenueMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueMapAnnotation.m; sourceTree = "<group>"; };
 		1B2D45BB12B4819900745347 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		1B2D45BC12B4819900745347 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		1B2D45BD12B4819900745347 /* MainMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
@@ -222,6 +234,9 @@
 				1B2D471512B977D100745347 /* libz.1.2.3.dylib in Frameworks */,
 				1B6E195512C3F75C00C44A42 /* libxml2.2.dylib in Frameworks */,
 				1B3F55FA13007DBC008D97BA /* libDecafNinja.a in Frameworks */,
+				1B1FDA5C13084E3F00561FAA /* MapKit.framework in Frameworks */,
+				1B1FDAA51308667500561FAA /* CoreLocation.framework in Frameworks */,
+				1B1FDB631308B32A00561FAA /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,8 +266,20 @@
 		1B1FD998130717AA00561FAA /* Venue view controller */ = {
 			isa = PBXGroup;
 			children = (
+				1B1FDBA21308B7DC00561FAA /* Objects */,
+				1B1FDA4A13084BD700561FAA /* VenueDetailViewController.h */,
+				1B1FDA4B13084BD700561FAA /* VenueDetailViewController.m */,
 			);
 			name = "Venue view controller";
+			sourceTree = "<group>";
+		};
+		1B1FDBA21308B7DC00561FAA /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				1B1FDBA31308B7EB00561FAA /* VenueMapAnnotation.h */,
+				1B1FDBA41308B7EB00561FAA /* VenueMapAnnotation.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		1B2D45DB12B53D1100745347 /* Images */ = {
@@ -574,9 +601,12 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 				28860BE40F44EE6400985440 /* CoreData.framework */,
+				1B1FDB621308B32A00561FAA /* QuartzCore.framework */,
 				1B2D470812B977A700745347 /* CFNetwork.framework */,
 				1B2D470C12B977B000745347 /* SystemConfiguration.framework */,
 				1B2D471012B977B700745347 /* MobileCoreServices.framework */,
+				1B1FDA5B13084E3F00561FAA /* MapKit.framework */,
+				1B1FDAA41308667500561FAA /* CoreLocation.framework */,
 				1B2D471412B977D100745347 /* libz.1.2.3.dylib */,
 				1B6E188612C3D44B00C44A42 /* libxml2.2.dylib */,
 			);
@@ -704,6 +734,8 @@
 				1B67ADE31304E4790071AB25 /* WebViewController.m in Sources */,
 				1B552F8E1304FA69009D5597 /* InfoPanelAppObject.m in Sources */,
 				1B552FFE130509EC009D5597 /* SponsorModel.m in Sources */,
+				1B1FDA4C13084BD700561FAA /* VenueDetailViewController.m in Sources */,
+				1B1FDBA51308B7EB00561FAA /* VenueMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,7 +756,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0569C10B-7080-4CC5-BA22-BA10773AABDE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "34DF2C71-97B4-4CD6-AB8E-C0C6DF50C630";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "Libraries/libDecafNinja/Headers ../libDecafNinja/Headers";
 			};

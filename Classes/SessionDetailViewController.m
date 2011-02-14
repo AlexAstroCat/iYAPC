@@ -66,6 +66,7 @@ typedef enum {
 }
 
 - (void)viewDidUnload {
+	[_summaryHeader release];
 	[super viewDidUnload];
 }
 
@@ -222,9 +223,10 @@ typedef enum {
 					return NSLocalizedString(@"Presenters", nil);
 			}
 		}
+			
+		default:
+			return nil;
 	}
-	
-	return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

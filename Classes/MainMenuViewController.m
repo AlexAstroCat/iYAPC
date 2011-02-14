@@ -13,6 +13,7 @@
 #import "SessionDayViewController.h"
 #import "TracksListViewController.h"
 #import "InfoPanelViewController.h"
+#import "VenueDetailViewController.h"
 
 #import "DNFetchedRequestManager.h"
 
@@ -124,13 +125,9 @@ typedef enum {
 }
 
 - (IBAction)venueButtonTapped:(id)sender {
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not implemented"
-													message:@"This feature isn't finished yet. Sorry!"
-												   delegate:nil
-										  cancelButtonTitle:@"OK"
-										  otherButtonTitles:nil];
-	[alert show];
-	[alert release];
+	VenueDetailViewController *controller = [[[VenueDetailViewController alloc] initWithStyle:UITableViewStyleGrouped] autorelease];
+	controller.venueObject = self.eventObject.venue;
+	[self.navigationController pushViewController:controller animated:YES];
 }
 
 - (IBAction)sponsorsButtonTapped:(id)sender {

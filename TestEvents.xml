@@ -16,6 +16,8 @@
 • Pet Friendly rooms are available</summary>
 		<latitude>36.6082</latitude>
 		<longitude>-82.5526</longitude>
+                <address>123 Fourth Street
+Asheville, NC, 98765</address>
 	</Venue>
 	<Event>
 		<revision>1</revision>
